@@ -1,0 +1,3 @@
+// eslint-disable-next-line layers/dependencies
+import type { Catalog } from '$lib/features/catalog/adapters/sqlite-catalog';
+export type ForbiddenAlias = Catalog;

@@ -1,0 +1,2 @@
+const modulePath: string = '$lib/components/ui/PageMeta.svelte';
+void import(modulePath);

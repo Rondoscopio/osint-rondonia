@@ -2,9 +2,9 @@
   "$schema": "https://datapackage.org/profiles/2.0/datapackage.json",
   "name": "osint-rondonia-catalogo-relacional",
   "title": "Catálogo OSINT Rondônia — tabelas relacionais",
-  "description": "Catálogo de fichas OSINT de Rondônia em CSV relacionais. Dados de terceiros mantêm as condições e licenças declaradas em suas fontes; a licença AGPL do repositório aplica-se ao código. O token \\N representa valor nulo; strings vazias permanecem distintas.",
+  "description": "Catálogo de fichas OSINT de Rondônia em CSV relacionais, com hierarquia de portais, sites publicadores e instituições responsáveis. Recortes temáticos são definidos pela aplicação sobre categorias. Dados de terceiros mantêm as condições e licenças declaradas em suas fontes; a licença AGPL do repositório aplica-se ao código. O token \\N representa valor nulo; strings vazias permanecem distintas.",
   "homepage": "https://github.com/Rondoscopio/osint-rondonia",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "profile": "data-package",
   "resources": [
     {
@@ -63,16 +63,6 @@
             "description": "observacoes"
           },
           {
-            "name": "orgao_responsavel",
-            "type": "string",
-            "description": "orgao_responsavel"
-          },
-          {
-            "name": "entidade_responsavel",
-            "type": "string",
-            "description": "entidade_responsavel"
-          },
-          {
             "name": "esfera",
             "type": "string",
             "description": "esfera"
@@ -116,6 +106,18 @@
             "name": "tipo_id",
             "type": "string",
             "description": "tipo_id"
+          },
+          {
+            "name": "natureza",
+            "type": "string",
+            "description": "Distinção editorial entre provedores de dados e utilitários; independente do tipo registrado",
+            "constraints": {
+              "required": true,
+              "enum": [
+                "fonte",
+                "ferramenta"
+              ]
+            }
           },
           {
             "name": "status_triagem",
@@ -335,109 +337,6 @@
             ],
             "reference": {
               "resource": "fonte",
-              "fields": [
-                "id"
-              ]
-            }
-          },
-          {
-            "fields": [
-              "categoria_id"
-            ],
-            "reference": {
-              "resource": "categoria",
-              "fields": [
-                "id"
-              ]
-            }
-          }
-        ]
-      }
-    },
-    {
-      "name": "lista",
-      "type": "table",
-      "path": "data/lista.csv",
-      "format": "csv",
-      "mediatype": "text/csv",
-      "dialect": {
-        "delimiter": ",",
-        "header": true,
-        "lineTerminator": "\r\n"
-      },
-      "schema": {
-        "$schema": "https://datapackage.org/profiles/2.0/tableschema.json",
-        "fields": [
-          {
-            "name": "id",
-            "type": "string",
-            "description": "Identificador persistente da lista histórica",
-            "constraints": {
-              "required": true
-            }
-          },
-          {
-            "name": "nome",
-            "type": "string",
-            "description": "Nome da lista",
-            "constraints": {
-              "required": true
-            }
-          }
-        ],
-        "missingValues": [
-          "\\N"
-        ],
-        "primaryKey": [
-          "id"
-        ]
-      }
-    },
-    {
-      "name": "lista_categoria",
-      "type": "table",
-      "path": "data/lista_categoria.csv",
-      "format": "csv",
-      "mediatype": "text/csv",
-      "dialect": {
-        "delimiter": ",",
-        "header": true,
-        "lineTerminator": "\r\n"
-      },
-      "schema": {
-        "$schema": "https://datapackage.org/profiles/2.0/tableschema.json",
-        "fields": [
-          {
-            "name": "lista_id",
-            "type": "string",
-            "description": "Lista de fontes",
-            "constraints": {
-              "required": true
-            }
-          },
-          {
-            "name": "categoria_id",
-            "type": "string",
-            "description": "Tema associado à lista",
-            "constraints": {
-              "required": true
-            }
-          }
-        ],
-        "missingValues": [
-          "\\N"
-        ],
-        "primaryKey": [
-          "lista_id",
-          "categoria_id"
-        ],
-        "foreignKeys": [
-          {
-            "fields": [
-              "lista_id"
-            ],
-            "reference": {
-              "resource": "lista",
               "fields": [
                 "id"
               ]
@@ -1039,6 +938,297 @@
             ],
             "reference": {
               "resource": "fonte",
+              "fields": [
+                "id"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "camada_mapa",
+      "type": "table",
+      "path": "data/camada_mapa.csv",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "dialect": {
+        "delimiter": ",",
+        "header": true,
+        "lineTerminator": "\r\n"
+      },
+      "schema": {
+        "$schema": "https://datapackage.org/profiles/2.0/tableschema.json",
+        "fields": [
+          {
+            "name": "id",
+            "type": "string",
+            "description": "ID persistente da camada raster",
+            "constraints": {
+              "required": true
+            }
+          },
+          {
+            "name": "fonte_id",
+            "type": "string",
+            "description": "Fonte catalogada que publica a camada",
+            "constraints": {
+              "required": true
+            }
+          },
+          {
+            "name": "nome",
+            "type": "string",
+            "description": "Nome do produto ou camada de imagem",
+            "constraints": {
+              "required": true
+            }
+          },
+          {
+            "name": "url_tiles",
+            "type": "string",
+            "description": "Modelo de URL de tiles raster; {data} é substituído para periodicidade diária",
+            "constraints": {
+              "required": true
+            }
+          },
+          {
+            "name": "periodicidade",
+            "type": "string",
+            "description": "Referência temporal fixa ou diária",
+            "constraints": {
+              "required": true,
+              "enum": [
+                "fixa",
+                "diaria"
+              ]
+            }
+          },
+          {
+            "name": "data_referencia",
+            "type": "string",
+            "description": "Data ou ano de referência do mosaico; nulo para camadas diárias"
+          },
+          {
+            "name": "atribuicao",
+            "type": "string",
+            "description": "Texto de atribuição a exibir no mapa",
+            "constraints": {
+              "required": true
+            }
+          },
+          {
+            "name": "url_atribuicao",
+            "type": "string",
+            "description": "Página oficial de créditos e informações da imagem",
+            "constraints": {
+              "required": true
+            }
+          },
+          {
+            "name": "acknowledgement",
+            "type": "string",
+            "description": "Aviso de reconhecimento exigido pelo provedor, quando aplicável"
+          },
+          {
+            "name": "zoom_maximo",
+            "type": "integer",
+            "description": "Nível máximo de zoom publicado pelo serviço",
+            "constraints": {
+              "required": true
+            }
+          },
+          {
+            "name": "tile_size",
+            "type": "integer",
+            "description": "Tamanho do tile raster em pixels",
+            "constraints": {
+              "required": true
+            }
+          },
+          {
+            "name": "cobertura_continua",
+            "type": "boolean",
+            "description": "Indica se o produto oferece mosaico global contínuo",
+            "constraints": {
+              "required": true
+            }
+          },
+          {
+            "name": "ordem",
+            "type": "integer",
+            "description": "Ordem estável de apresentação no seletor",
+            "constraints": {
+              "required": true
+            }
+          }
+        ],
+        "missingValues": [
+          "\\N"
+        ],
+        "primaryKey": [
+          "id"
+        ],
+        "foreignKeys": [
+          {
+            "fields": [
+              "fonte_id"
+            ],
+            "reference": {
+              "resource": "fonte",
+              "fields": [
+                "id"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "portal",
+      "type": "table",
+      "path": "data/portal.csv",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "dialect": {
+        "delimiter": ",",
+        "header": true,
+        "lineTerminator": "\r\n"
+      },
+      "schema": {
+        "$schema": "https://datapackage.org/profiles/2.0/tableschema.json",
+        "fields": [
+          {
+            "name": "id",
+            "type": "string",
+            "description": "ID persistente do portal, site ou instituição",
+            "constraints": {
+              "required": true
+            }
+          },
+          {
+            "name": "nome",
+            "type": "string",
+            "description": "Nome literal do domínio ou da instituição declarada",
+            "constraints": {
+              "required": true
+            }
+          },
+          {
+            "name": "tipo",
+            "type": "string",
+            "description": "Distinção entre site publicador e instituição responsável",
+            "constraints": {
+              "required": true
+            },
+            "categories": [
+              "grupo",
+              "instituicao",
+              "site"
+            ]
+          },
+          {
+            "name": "url_base",
+            "type": "string",
+            "description": "Origem canônica do site; nulo quando o registro representa uma instituição"
+          },
+          {
+            "name": "portal_pai_id",
+            "type": "string",
+            "description": "Portal superior explícito quando a relação é inequívoca"
+          }
+        ],
+        "missingValues": [
+          "\\N"
+        ],
+        "primaryKey": [
+          "id"
+        ],
+        "foreignKeys": [
+          {
+            "fields": [
+              "portal_pai_id"
+            ],
+            "reference": {
+              "resource": "portal",
+              "fields": [
+                "id"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "fonte_portal",
+      "type": "table",
+      "path": "data/fonte_portal.csv",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "dialect": {
+        "delimiter": ",",
+        "header": true,
+        "lineTerminator": "\r\n"
+      },
+      "schema": {
+        "$schema": "https://datapackage.org/profiles/2.0/tableschema.json",
+        "fields": [
+          {
+            "name": "fonte_id",
+            "type": "string",
+            "description": "Ficha relacionada",
+            "constraints": {
+              "required": true
+            }
+          },
+          {
+            "name": "portal_id",
+            "type": "string",
+            "description": "Site publicador ou instituição responsável",
+            "constraints": {
+              "required": true
+            }
+          },
+          {
+            "name": "papel",
+            "type": "string",
+            "description": "Como o portal se relaciona com a ficha",
+            "constraints": {
+              "required": true
+            },
+            "categories": [
+              "entidade_responsavel",
+              "orgao_responsavel",
+              "publicador"
+            ]
+          }
+        ],
+        "missingValues": [
+          "\\N"
+        ],
+        "primaryKey": [
+          "fonte_id",
+          "portal_id",
+          "papel"
+        ],
+        "foreignKeys": [
+          {
+            "fields": [
+              "fonte_id"
+            ],
+            "reference": {
+              "resource": "fonte",
+              "fields": [
+                "id"
+              ]
+            }
+          },
+          {
+            "fields": [
+              "portal_id"
+            ],
+            "reference": {
+              "resource": "portal",
               "fields": [
                 "id"
               ]

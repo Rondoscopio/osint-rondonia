@@ -57,6 +57,15 @@ createServer(async (request, response) => {
     response.writeHead(200, { ...headers, 'Content-Length': size });
     createReadStream(target).pipe(response);
   } catch {
+    if (request.headers.accept?.includes('text/html')) {
+      const fallback = resolve(root, '404.html');
+      const found = await stat(fallback).catch(() => null);
+      if (found?.isFile()) {
+        response.writeHead(404, { 'Content-Type': types['.html'] });
+        createReadStream(fallback).pipe(response);
+        return;
+      }
+    }
     response.writeHead(404).end();
   }
 }).listen(4173, '127.0.0.1');

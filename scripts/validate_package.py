@@ -137,6 +137,27 @@ def validate(package_dir: Path) -> dict[str, int]:
                     fail(f"FK órfã em {name}:{index} -> {target}: {key}")
 
     validar_geografia(tables)
+    if "camada_mapa" in tables:
+        nature_by_source = {
+            row["id"]: row["natureza"] for row in tables.get("fonte", [])
+        }
+        for index, row in enumerate(tables["camada_mapa"], start=2):
+            if nature_by_source.get(row["fonte_id"]) != "fonte":
+                fail(f"camada_mapa:{index}: a camada precisa apontar para uma fonte")
+            template = row["url_tiles"]
+            reference_date = row["data_referencia"]
+            if row["periodicidade"] == "fixa":
+                if reference_date == NULL or "{data}" in template:
+                    fail(
+                        f"camada_mapa:{index}: camada fixa precisa de data e URL sem {{data}}"
+                    )
+            elif row["periodicidade"] == "diaria":
+                if reference_date != NULL or "{data}" not in template:
+                    fail(
+                        f"camada_mapa:{index}: camada diária precisa de {{data}} na URL e data_referencia nula"
+                    )
+            if not template.startswith(("https://", "http://")):
+                fail(f"camada_mapa:{index}: URL de tiles deve usar HTTP ou HTTPS")
     counts = {name: len(rows) for name, rows in tables.items()}
     return {
         "resources": len(resources),

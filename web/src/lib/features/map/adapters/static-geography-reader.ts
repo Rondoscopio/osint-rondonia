@@ -1,5 +1,5 @@
 import { asset } from '$app/paths';
-import type { MapAssets, SatelliteLayer } from '../domain/types';
+import type { MapAssets, MapLayerOptions } from '../domain/types';
 import type { GeographyReader } from '../ports/geography-reader';
 
 export class StaticGeographyReader implements GeographyReader {
@@ -11,15 +11,43 @@ export class StaticGeographyReader implements GeographyReader {
     };
   }
 
-  satelliteLayer(date: string): SatelliteLayer {
+  layerOptions(): MapLayerOptions {
     return {
-      tiles: [
-        `https://gibs.earthdata.nasa.gov/wmts/epsg3857/best/MODIS_Terra_CorrectedReflectance_TrueColor/default/${date}/GoogleMapsCompatible_Level9/{z}/{y}/{x}.jpg`,
+      borders: [
+        {
+          id: 'natural-earth',
+          label: 'Natural Earth · dados locais',
+          attribution: 'Limites políticos: Natural Earth, domínio público.',
+        },
+        {
+          id: 'openfreemap',
+          label: 'OpenStreetMap · OpenFreeMap',
+          styleUrl: 'https://tiles.openfreemap.org/styles/positron',
+          attribution:
+            'OpenFreeMap · OpenMapTiles · OpenStreetMap contributors',
+        },
       ],
-      attribution: 'NASA GIBS',
-      attributionUrl: 'https://worldview.earthdata.nasa.gov/',
-      maxzoom: 9,
-      tileSize: 256,
+      relief: [
+        {
+          id: 'natural-earth',
+          label: 'Natural Earth · sombreado global',
+          attribution: 'Relevo: Natural Earth, domínio público.',
+          attributionUrl:
+            'https://www.naturalearthdata.com/about/terms-of-use/',
+          maxzoom: 0,
+          tileSize: 256,
+        },
+        {
+          id: 'opentopomap',
+          label: 'OpenTopoMap · SRTM + OpenStreetMap',
+          tiles: ['https://a.tile.opentopomap.org/{z}/{x}/{y}.png'],
+          attribution:
+            'Kartendaten: © OpenStreetMap-Mitwirkende, SRTM | Kartendarstellung: © OpenTopoMap (CC-BY-SA)',
+          attributionUrl: 'https://opentopomap.org/about#verwendung',
+          maxzoom: 17,
+          tileSize: 256,
+        },
+      ],
     };
   }
 }

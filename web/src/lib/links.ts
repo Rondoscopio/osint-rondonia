@@ -1,19 +1,39 @@
 import { resolve } from '$app/paths';
-import type { NodeKind } from './catalog';
 
 export function sources(
-  values: Record<string, string | number | undefined> = {},
+  values: Record<string, string | string[] | number | undefined> = {},
 ) {
-  const params = new URLSearchParams();
-  for (const [key, value] of Object.entries(values))
-    if (value) params.set(key, String(value));
-  return resolve('/fontes/') + (params.size ? '?' + params : '');
+  return catalogRecords('fonte', values);
 }
 
-export function graphLink(kind: NodeKind, id: string, page = 1) {
-  const params = new URLSearchParams({ tipo: kind, id });
-  if (page > 1) params.set('pagina', String(page));
-  return resolve('/grafo/') + '?' + params;
+export function tools(
+  values: Record<string, string | string[] | number | undefined> = {},
+) {
+  return catalogRecords('ferramenta', values);
+}
+
+export function portalLink(id: string) {
+  return resolve('/portais/[id]', { id: encodeURIComponent(id) }) + '/';
+}
+
+export function catalogRecords(
+  kind: 'fonte' | 'ferramenta',
+  values: Record<string, string | string[] | number | undefined> = {},
+) {
+  const { id, ...filters } = values;
+  const path = kind === 'ferramenta' ? '/ferramentas/' : '/fontes/';
+  if (id !== undefined && id !== '') {
+    const route = kind === 'ferramenta' ? '/ferramentas/[id]' : '/fontes/[id]';
+    return resolve(route, { id: encodeURIComponent(String(id)) }) + '/';
+  }
+
+  const params = new URLSearchParams();
+  for (const [key, value] of Object.entries(filters)) {
+    if (Array.isArray(value)) {
+      for (const item of value) if (item) params.append(key, item);
+    } else if (value) params.set(key, String(value));
+  }
+  return resolve(path) + (params.size ? '?' + params : '');
 }
 
 export function httpLink(value: string) {

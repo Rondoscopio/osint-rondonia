@@ -1,0 +1,7 @@
+<script lang="ts">
+  import PageMeta from '$lib/components/ui/PageMeta.svelte';
+  const title = 'Fixture';
+  void import('$lib/components/ui/PageMeta.svelte');
+</script>
+
+<PageMeta {title} />

@@ -1,0 +1,13 @@
+<script lang="ts">
+  let tag = 'article';
+</script>
+
+<svg><path d="M0 0" /></svg>
+<svelte:element this={tag} />
+<svelte:head><title>Metadados</title></svelte:head>
+
+<style>
+  .sample {
+    color: red;
+  }
+</style>

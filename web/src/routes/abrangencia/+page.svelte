@@ -1,5 +1,5 @@
 <script lang="ts">
-  import IndexView from '$lib/IndexView.svelte';
+  import ExplorerView from '$lib/views/ExplorerView.svelte';
 </script>
 
-<IndexView kind="abrangencia" />
+<ExplorerView initialNature="todos" />

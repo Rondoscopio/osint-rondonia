@@ -152,6 +152,7 @@ url-08d78daf2d73c1,src-1ddd03483394f4,principal,0,\N,https://detran.es.gov.br/
 url-08e34b3414a3d7,src-22665d0e0b39d9,principal,0,\N,https://ais.cavok.in/rab/
 url-08ebcb63688bda,src-0aeb0eb0a34949,principal,0,\N,https://datafolha.folha.uol.com.br/
 url-08fc6bf415db58,src-fa41d278291663,principal,0,\N,https://www.onelook.com/reverse-dictionary.shtml
+url-09007b8aa04ca6,src-b2a4dd85239b58,principal,0,\N,https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/microdados/pnera
 url-09011f880f97fb,src-21e84f09c9fef0,principal,0,\N,https://rondonia.ro.gov.br/iperon/
 url-0901d9aa518497,src-01cf3b30339788,principal,0,\N,https://guajaranoticias.com.br/
 url-09103a41a48ad1,src-13a1b54f6cc425,principal,0,\N,https://www.valoremercadoro.com.br/
@@ -162,6 +163,7 @@ url-09623105e55898,src-c40ca27adf52ed,principal,0,\N,https://www.mpms.mp.br/
 url-09626eb5def967,src-219717c2677ce3,principal,0,\N,https://transparencia.ro.gov.br/patrimonio/veiculos
 url-0966483a687704,src-8188d793dd1052,principal,0,\N,https://portal.trf6.jus.br/certidao-online7/
 url-0972cc52011cf6,src-bbcafe88b1aa92,principal,0,\N,https://hdr.undp.org/en/global-reports
+url-0992e042073454,src-2c5c6dff2c3d00,principal,0,\N,https://docs.cnpj.ws/referencia-de-api/api-publica/consultando-cnpj
 url-099641989e9bc8,src-0cfa6d8c1f996f,principal,0,\N,http://www.feiradesantana.ba.gov.br/seprev/desaparecidos/desaparecidos.asp
 url-09990c35dfee2c,src-da289eecc9e2d3,principal,0,\N,https://www.gov.br/conecta/catalogo/apis/api-portal-de-dados-abertos
 url-0999127ee1a608,src-68c129156bfc6e,principal,0,\N,https://geoinfo.dados.embrapa.br/developer/
@@ -238,6 +240,7 @@ url-0db96c73bcce13,src-c149f42d90d500,principal,0,\N,https://katb.in
 url-0dc531bd254eac,src-f43bde104d271e,principal,0,\N,https://livingatlas.arcgis.com/en/browse/
 url-0dcbf68b7c5c6a,src-f5b6a4bd597745,principal,0,\N,https://github.com/david3107/squatm3gator
 url-0de44a64e40889,src-a3c23d05ad02f0,principal,0,\N,https://dados.portovelho.ro.gov.br/
+url-0df10721f583a7,src-702a957545464e,principal,0,\N,https://infosiga.detran.sp.gov.br/
 url-0e0a4479293040,src-90cbfc440e887b,principal,0,\N,https://tce.ap.gov.br/
 url-0e0db45d2ceb2f,src-4d56b1c56ef5b2,principal,0,\N,https://transparencia.go.gov.br/api-de-dados-abertos/
 url-0e209ca5873208,src-4ac9dd3c32b8b8,principal,0,\N,https://sistemas.trf1.jus.br/certidao/
@@ -321,6 +324,7 @@ url-119b46cb210182,src-0f3e1cc5298f36,principal,0,\N,https://dados.unifei.edu.br
 url-11c4c2c578f42a,src-3506986473f199,principal,0,\N,https://github.com/OpenRefine
 url-11d5b1ba16024a,src-5861556985cbd2,principal,0,\N,https://www.ons.org.br/paginas/energia-agora/balanco-de-energia
 url-11d98a94e75b63,src-d5825ff178d241,principal,0,\N,https://registro.br/dominio/lista-processo-liberacao.txt
+url-11de9f3d6f3eed,src-94931644b7ff97,principal,0,\N,https://geoportal.sgb.gov.br/geosgb/
 url-11ec3a29d92084,src-b9c00b2496af97,principal,0,\N,https://vk5.city4me.com
 url-11ec795b29d639,src-9880912fd21d77,principal,0,\N,https://repositorio.ufrn.br/server/oai/request?verb=Identify
 url-12058aab889749,src-66c8f618c6f399,principal,0,\N,https://www.shodan.io/search?query=country%3A%22BR%22+%22webcam%22+has_screenshot%3Atrue
@@ -451,6 +455,7 @@ url-18aaaed729a4e9,src-e7362cfa9d0e62,principal,0,\N,https://imazon.org.br/bibli
 url-18b562f80101bf,src-6c4534d7ada694,principal,0,\N,https://www.goiania.go.gov.br/sing_servicos/consulta-processos/
 url-18bda6934e7ca0,src-a08651a150456b,principal,0,\N,https://www.eluta.ca
 url-18d420d3ca89a0,src-bd8a814cde8d1b,principal,0,\N,https://correiocentral.com.br/
+url-18dff5ff8278bf,src-94931644b7ff97,relacionada,2,Downloads do GeoSGB,https://geosgb.sgb.gov.br/geosgb/downloads.html
 url-18e4c20ae08253,src-541bfb85c10455,principal,0,\N,https://www.cremesp.org.br/
 url-18eb9f7e074be7,src-bdc171b0703f08,principal,0,\N,https://sapl.ministroandreazza.ro.leg.br/
 url-18f51a334424c6,src-ae0af8a0e267e9,principal,0,\N,https://geoportal.codevasf.gov.br/server/rest/services
@@ -584,6 +589,7 @@ url-1dc8694916ac9c,src-7c428783d49f41,principal,0,\N,https://www.legisrorainopol
 url-1de05d5470649a,src-24f87c3418ce3f,principal,0,\N,https://daer.kopp.com.br/ftp/imagem.php?id=Nova_Bassano
 url-1de7af6365e9b0,src-d5744ea250e33d,principal,0,\N,https://transparencia.mpf.mp.br/conteudo/gestao-de-pessoas/plano-de-carreira/
 url-1de8d6a3146acf,src-11e46d4b30e36f,principal,0,\N,https://aladin.cds.unistra.fr/
+url-1e1011c0085dcf,src-0e65a2ecec64eb,principal,0,\N,https://github.com/jonathands/dados-abertos-receita-cnpj
 url-1e11421efc475c,src-f4e51299b29dd6,principal,0,\N,https://www.etools.ch
 url-1e1279e9812e81,src-5590c256cca6b4,principal,0,\N,https://cfc.org.br/conselhos/conselho-regional-de-contabilidade-do-maranhao/
 url-1e30547c994cc9,src-ef6fb59285a417,principal,0,\N,https://www.opinioncrawl.com
@@ -617,6 +623,7 @@ url-1fac8d8b6249ed,src-2babc731d1f7e0,principal,0,\N,https://sites.google.com/in
 url-1fb09cfd7e0652,src-8f43d3a5aada73,principal,0,\N,https://shadowlibraries.github.io/
 url-1fb18ae8a03734,src-ebc9a7dc6f769e,principal,0,\N,https://eproc1.tjto.jus.br/eprocV2_prod_1grau/externo_controlador.php?acao=cj_online&acao_origem=&acao_retorno=cj_online
 url-1fbe3c61bd0f05,src-d72b8b0da86776,principal,0,\N,https://sapl.novohorizontedooeste.ro.leg.br/
+url-1fc0f3d0306006,src-9120eb88c635b5,principal,0,\N,https://arquivos.b3.com.br/api/
 url-1fc6c252e6fb41,src-8d24a486bd2287,principal,0,\N,https://www.windy.com/
 url-1fde4f0593f55a,src-1d021ddd77ef3f,principal,0,\N,https://dados.gov.br/dados/conjuntos-dados/dominios-govbr
 url-1febaea0d30da0,src-c0b189ff769ddf,principal,0,\N,https://search.lycos.com
@@ -735,6 +742,7 @@ url-2641d832d7a9cd,src-95ff32f1b820aa,principal,0,\N,https://api.portaldatranspa
 url-26440697faf669,src-32c8101a8db426,principal,0,\N,https://portalbnmp.cnj.jus.br/
 url-26504d9c5fac22,src-b091481cbdee2b,principal,0,\N,https://servicos.ba.gov.br/servicos/dados/abertos
 url-2657d6a5e55cc1,src-a522f00a996d5a,principal,0,\N,https://dadoscientificos.ufsc.br/
+url-267cca1a62d875,src-72c65b3763b030,principal,0,\N,https://dados.antt.gov.br/dataset/investimentos
 url-267cd898e6207e,src-3760e8048cd28c,principal,0,\N,https://www.google.com/chrome
 url-268bcc14f4d740,src-c7dae24cd74295,principal,0,\N,https://www.gov.br/mj/pt-br/assuntos/sua-seguranca/seguranca-publica/estatistica/pesquisaperfil
 url-2690fca41c7472,src-5b29949c76125a,principal,0,\N,https://www.trt4.jus.br/portais/trt4/dados-abertos-documentacao-api-licitacoes-contratos
@@ -784,6 +792,7 @@ url-2829bf11d51d28,src-b7b7190eade4a2,principal,0,\N,https://www.skopenow.com/ne
 url-285c10ca4a0a2d,src-ccc3aed40a6ede,principal,0,\N,https://github.com/Moresyl/metaclean
 url-285e9b5cfb9ccb,src-f9163d5085705f,principal,0,\N,https://www.izito.com
 url-2861656e4e65f8,src-3fb1732a9f28af,principal,0,\N,https://sistemas.anac.gov.br/voeseguro/
+url-2869ecb7449df0,src-a2a4b12de24863,relacionada,1,Endpoint CKAN datastore_search da CAPES,https://dadosabertos.capes.gov.br/pt_BR/api/3/action/datastore_search
 url-28a073b846aba7,src-97ce28b81e2c05,principal,0,\N,https://esaj.tjce.jus.br/esaj/portal.do?servico=190090
 url-28a26cb5c3a5de,src-8e52485c21a924,principal,0,\N,https://aiddata.org
 url-28b32abd495f16,src-2c8576ced22e58,principal,0,\N,https://data.inpe.br/stac/browser/?.language=en
@@ -1003,12 +1012,14 @@ url-33c6916118ed69,src-98c77f097c0a33,principal,0,\N,https://api.emgea.gov.br/
 url-33cfc973dccf0f,src-ce6246dfd53cd9,principal,0,\N,https://www.google.com/search?q=%22SEU_ALVO%22+before%3A2015-01-01
 url-33d0974aed84d3,src-7dc2ad39664e87,principal,0,\N,http://api.funceme.br/
 url-33e57ce887e73b,src-f916bb50e61ad9,principal,0,\N,https://www.getwebreader.com
+url-33f102e9dbf004,src-fd1658259733bf,relacionada,1,SACE — bacia do Madeira,https://sace.sgb.gov.br/index_bacias_monitoradas.php?getbacia=bmadeira
 url-33fa2a7d9a2b59,src-35213e475491d1,principal,0,\N,https://etransparente.tjro.jus.br/
 url-341cc72c5392b5,src-8f10245132b3a5,principal,0,\N,https://groups.yahoo.com
 url-3420fbe4ebbde0,src-90a54aea79795d,principal,0,\N,https://sapl.corumbiara.ro.leg.br/
 url-3421dc5d22200f,src-ce6f1f9df76b3c,principal,0,\N,https://github.com/finos/perspective
 url-34225d461b6b6b,src-6e6accc188195a,principal,0,\N,https://rondonia.ro.gov.br/politec/
 url-342b093a4f4c49,src-853af92c21dbce,principal,0,\N,https://nfse.sefaz.salvador.ba.gov.br/OnLine/Institucional/FaqTecnologia.aspx
+url-344294fecc5300,src-595b43760cfdc6,principal,0,\N,https://tcgeo.tcero.tc.br/
 url-3445688dca1563,src-a30914fbfd6bb9,principal,0,\N,https://www.chelfoapi.com/
 url-344fdc0d846cac,src-004104e9a9a44b,principal,0,\N,https://acessoainformacao.cigirs.go.gov.br/cidadao/outras_informacoes/acesso_automatizado
 url-34507ba28ae3f2,src-29920161b32fbb,principal,0,\N,https://www.bis.org/statistics/index.htm
@@ -1030,6 +1041,7 @@ url-35721bf6efdf26,src-0df6ebc553d40d,principal,0,\N,https://www.rondonopolis.mt
 url-3588501a0ac882,src-5a284421ecc878,principal,0,\N,https://servicos.receitafederal.gov.br/servico/certidoes/
 url-358fb08b412f38,src-2cb5d437fed702,principal,0,\N,https://visualizefree.com
 url-3595274a896d90,src-b93c0537eef2fa,principal,0,\N,https://www.google.com/earth
+url-359d3b1e28b3bb,src-f831be90731d9a,relacionada,1,Endpoint de metadados da API Ipeadata,https://www.ipeadata.gov.br/api/odata4/Metadados
 url-35e500be5f940d,src-bab4c6361c7ee3,principal,0,\N,https://www.tjmg.jus.br/
 url-35f0995db8ea67,src-96795187feb792,principal,0,\N,https://www.esimplesauditoria.com/consulta-cnpj
 url-35f1e2af631b44,src-ed8f151a451dc5,principal,0,\N,https://docs.ckan.org/en/2.9/api/
@@ -1092,6 +1104,7 @@ url-38cac5c64374b3,src-af18b337a082b3,principal,0,\N,https://www.google.com/sear
 url-38cb30d238fa01,src-87f05fe12d8787,principal,0,\N,https://portal.fiocruz.br/
 url-38ce70d03bfffe,src-0a7d1e908c6f7f,principal,0,\N,https://observatorio.sepog.ro.gov.br/
 url-38db0d959f3e5a,src-e538bdf62c8bed,principal,0,\N,https://www.changedetection.com
+url-38f2dbf9cfefca,src-c94d550a769f3b,principal,0,\N,https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/microdados/enem-por-escola
 url-390064bde41e43,src-d9c017db6a7058,principal,0,\N,https://transparencia.tce.sp.gov.br/apis
 url-390ab20745800b,src-36a9bd83d86406,principal,0,\N,https://camaranhamunda.am.gov.br/api-dados-abertos/
 url-390d3079dc2e79,src-af12db3c8ab4ae,principal,0,\N,https://arquivos.receitafederal.gov.br/index.php/s/YggdBLfdninEJX9
@@ -1164,6 +1177,7 @@ url-3bc4597feb51f8,src-859bbfb6f341e6,principal,0,\N,https://www.mpap.mp.br/dado
 url-3bcf70440ceabd,src-5b84b5c5556ab0,principal,0,\N,https://transparencia.al.go.leg.br/dados-abertos
 url-3bf1a1b1e5bafa,src-a9244db94d3c90,principal,0,\N,https://www.onlinenewspapers.com
 url-3bf739d79522eb,src-03be4037c0cf7f,principal,0,\N,https://juliapesquisa.trf5.jus.br/julia-pesquisa/pesquisa
+url-3c194601f68ac8,src-e327c850f8101b,principal,0,\N,https://dados.gov.br/dados/conjuntos-dados/cadastro-nacional-da-pessoa-juridica---cnpj
 url-3c31ad5f9404f2,src-e8003c6eaae210,principal,0,\N,https://www.tcm.rj.gov.br/
 url-3c345d03f4c8db,src-2c082cbd3cca1c,principal,0,\N,https://justica-em-numeros.cnj.jus.br/painel-estatisticas/
 url-3c5331ad36c01e,src-3178bf66cb1710,principal,0,\N,http://taxas.detran.pi.gov.br/licenciamento/index.jsf
@@ -1183,6 +1197,7 @@ url-3cf745940c7f6d,src-90b064bc2df93c,principal,0,\N,https://www.trf1.jus.br/trf
 url-3cf8cbaf495277,src-e67a95845aa01c,principal,0,\N,https://www.google.com/search?q=intitle%3A%22Network+Camera%22+site%3Abr
 url-3d3660de329794,src-5df4aea4e649b5,principal,0,\N,https://dados.gov.br/dataset?tags=ERB
 url-3d4f8234d5ed52,src-da2a54861a7f63,principal,0,\N,https://igdatahub.com/data/brazil-2026-runoff-instagram/
+url-3d7008cd0cfb33,src-e9b4a58ee3ba54,principal,0,\N,https://www.bcb.gov.br/pda/desig/scrdata_2025.zip
 url-3d78ba7c73652c,src-aaf3075d175c15,principal,0,\N,https://www2.camara.leg.br/transparencia/dados-abertos/dados-abertos-legislativo/dados-abertos-legislativo
 url-3d8da351079e32,src-2d65fdab149ba2,principal,0,\N,https://www.tjrs.jus.br/novo/api-de-dados-abertos/
 url-3d9b1aec93ab8c,src-5807dbf93a956d,principal,0,\N,https://queimadas.dgi.inpe.br/queimadas/portal
@@ -1223,6 +1238,7 @@ url-3f948ca43b0e26,src-dd37cc5ef6fe26,principal,0,\N,https://dados.gov.br/swagge
 url-3fa34dee68b75c,src-68cf5095345231,principal,0,\N,https://informacoes.anatel.gov.br/paineis/outorga-e-licenciamento/autorizacoes-e-licenciamentos-do-smp
 url-3fad582e53f7b6,src-aa7a36de3b6650,principal,0,\N,https://www.gov.br/mulheres/pt-br/ligue180
 url-3fadf977bb65a8,src-23a2d3f9ee920a,principal,0,\N,https://developers.banrisul.com.br/pages/docs/parceiros-banrisul/consignado-rs-v1.html
+url-3fb12dc94405d8,src-15cda4a729c7bd,principal,0,\N,https://docs.quantilica.com/fontes/educacao/capes-fetcher/
 url-3fb6d93cd2117c,src-6e4632442fb61e,principal,0,\N,https://www.trt9.jus.br/portal/pagina.xhtml?secao=168&pagina=FALCAO
 url-3fc570864f4eea,src-1d161d88bbe621,principal,0,\N,https://www.harmari.com/search/unified
 url-3fccd5bc408f8e,src-20a1918586a4ef,principal,0,\N,http://infocarrosp.com.br/
@@ -1306,6 +1322,7 @@ url-44b9d713f70c3c,src-c939ab0e25a6ff,principal,0,\N,https://seeu-consulta-pub.p
 url-44bab5d365a589,src-a43652ae0f9ef8,principal,0,\N,https://www.defensoria.sp.def.br/
 url-44c0594f9d7e38,src-d53195107684f1,principal,0,\N,https://www.google.com/search?q=site%3Acom.br+intext%3A%22telefone%3A%22+%7C+%22celular%3A%22+%7C+%22whatsapp%3A%22
 url-44d2f1e7ed5b41,src-b72f032ad9dc21,principal,0,\N,https://www.geonames.org
+url-44e84c84db4076,src-83dadafd01a558,relacionada,1,Início do repositório RIGeo,https://rigeo.sgb.gov.br/home
 url-44eda04f8700d2,src-efc5bf22305ab3,principal,0,\N,https://inthegra.strans.teresina.pi.gov.br/
 url-44ef6bbcf400dd,src-ff08bafb7001bb,principal,0,\N,https://www.osint-tool.com/
 url-4501b8e7bc59d5,src-d25df549ab3b68,principal,0,\N,https://data.inpe.br/
@@ -1348,6 +1365,7 @@ url-46d26907e055a1,src-228eedf398c313,principal,0,\N,https://www.tandfonline.com
 url-46d7c01ba5ccc2,src-e1aeea518ef01e,principal,0,\N,https://infogr.am
 url-470faa50cf568c,src-f28e81a56bf895,principal,0,\N,https://arcgis.itajai.sc.gov.br/server/sdk/rest/02ss/02ss00000057000000.htm
 url-4721528891afab,src-58ae7babee06a4,principal,0,\N,https://www.google.com/search?q=%22SEU_VEICULO_PLACA%22+site%3Aolx.com.br+%7C+site%3Awebmotors.com.br+%7C+site%3Aicarros.com.br
+url-47375ecc97b327,src-5c1b4985c361b7,principal,0,\N,https://docs.quantilica.com/fontes/saude/sigtap-fetcher/
 url-474638e4af65ea,src-2af4e2a6f44c87,principal,0,\N,https://www.google.com/search?q=site%3Agov.br
 url-474756e2701290,src-514d1e13e1dd81,principal,0,\N,https://ajuda.decea.mil.br/base-de-conhecimento/api-redemet-o-que-e/
 url-47481db991a26c,src-42728c8e7b07a7,principal,0,\N,http://cnpj.info/
@@ -1533,6 +1551,7 @@ url-516918ca9c76bf,src-6a5b3c4009c455,principal,0,\N,http://www8.receita.fazenda
 url-516bb783372bac,src-3d0247bf038741,principal,0,\N,https://www.aneel.gov.br/siga
 url-5171719b957e42,src-6fed77c0b3dc50,principal,0,\N,https://www.ssp.sc.gov.br/dtic/index.php/cameras/cameras-online-sao-jose
 url-5186ab67dc1dc1,src-5eab78483137dc,principal,0,\N,https://redditcommentsearch.com/
+url-519154b6581857,src-ba9698d6052daa,principal,0,\N,https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/microdados/censo-dos-profissionais-do-magisterio-1
 url-5198e8d1fa1b32,src-c57a0618a2441c,principal,0,\N,https://dadosabertos.defensoria.pe.def.br/
 url-51af0e3f71a75c,src-78268007e51fef,principal,0,\N,https://www.detran.sp.gov.br/
 url-51e547d7d118c3,src-592527b67e2f81,principal,0,\N,https://www.gov.br/economia/pt-br/assuntos/patrimonio-da-uniao
@@ -1551,6 +1570,7 @@ url-52538167caf8a1,src-4f0aaff23029dd,principal,0,\N,https://sicavi.al.ro.leg.br
 url-5256a2a9dad42c,src-b00a7ca2b8f8ad,principal,0,\N,https://creativecommons.org/licenses/by-sa/4.0/
 url-52597b42d0d92c,src-0ca5ae7582a951,principal,0,\N,https://governa.presidencia.gov.br/painel_publico/#/98b55d08-0983-4287-8f0d-dbdbdabb76d3/53192575-47d7-48ec-b8e9-b0a04c4ee1e2
 url-525de2ceef7283,src-3472c8fa91a6ae,principal,0,\N,https://github.com/AbdaullahAG/Threat_Intel_Project
+url-526c33e3b81015,src-cfd5b1089d2abc,principal,0,\N,https://dadosabertos.pgfn.gov.br/2026_trimestre_03/Dados_abertos_FGTS.zip
 url-5276aadc6c2d0b,src-38ae0e8f1475e4,principal,0,\N,https://accentusoft.com/
 url-5278486afc4170,src-f9fc5709fc7d17,principal,0,\N,https://transparencia.defensoria.ro.def.br/gestao-pessoas/quadro-servidores
 url-52846db3807ab3,src-c08fb5fb38eff8,principal,0,\N,https://escola.al.ro.leg.br/
@@ -1559,6 +1579,7 @@ url-529e1d76c94e60,src-62b5100a61ed6a,principal,0,\N,https://github.com/0xzeroli
 url-52ab455892016b,src-528d70065977be,principal,0,\N,https://sites.tcu.gov.br/dados-abertos/webservices-tcu/#consultar-acordaos
 url-52b075f791811a,src-e3b5c2a22d42dc,principal,0,\N,https://www.maltego.com/
 url-52bdcc0a4e89de,src-f176f1cb789856,principal,0,\N,https://datawrapper.de
+url-52c3c300ed053f,src-1dc3e0e6322429,relacionada,1,Downloads históricos,https://www.transparencia.sp.gov.br/Remuneracao/downloadhistorico
 url-52e659b1db38ec,src-e04c4562d82c56,principal,0,\N,https://sigma.cptec.inpe.br/
 url-52f4ddaa874405,src-fbed84f02f93b9,principal,0,\N,https://www.tre-ac.jus.br/
 url-5307e08223f21b,src-cc462547279f00,principal,0,\N,https://pulsedive.com
@@ -1932,6 +1953,7 @@ url-66f6374d17ae6a,src-bfe45ca2d51224,principal,0,\N,https://www.social-searcher
 url-66f783360547ee,src-09575a40b8c7ed,principal,0,\N,https://www.google.com/search?q=%22SEU_ALVO%22+%22SEU_MUNICIPIO%22+%22jornal%22+%7C+%22gazeta%22+%7C+%22di%C3%A1rio%22+%7C+%22folha%22
 url-66f8e2f9cfbd8d,src-e723cf2b93bd0b,principal,0,\N,https://voterrecords.com/
 url-67092718d64db0,src-8cd2a009068320,principal,0,\N,https://servicos.dpf.gov.br/antecedentes-criminais/certidao
+url-67137fba206445,src-37d77672fb4226,principal,0,\N,https://geoportal.sgb.gov.br/geofisica/
 url-6717edd0413697,src-facc0dcb2b81a1,principal,0,\N,https://www.tre-ro.jus.br/
 url-671b47ddecf287,src-815cc0b6f16ba7,principal,0,\N,https://www.gov.br/mma/pt-br/acesso-a-informacao/informacoes-ambientais/mapas-interativos/mapas-interativos-desmatamento-e-incendios
 url-67221b60e20681,src-77816e08cc962f,principal,0,\N,https://divulgacandcontas.tse.jus.br/divulga/rest/v1/docs/
@@ -2068,6 +2090,7 @@ url-6cbb95bcd6c261,src-3372af009b9021,principal,0,\N,https://api-dados-abertos.t
 url-6cc77835167588,src-d6938168664de5,principal,0,\N,https://servicos.efazenda.ms.gov.br/consultapublica
 url-6ce123d246a18e,src-6b01be7458e86f,principal,0,\N,https://panorama.sipam.gov.br/painel/meteorologia/previsao/dados_abertos
 url-6ceda381198ecb,src-0b1679df261d14,principal,0,\N,https://www2.tjal.jus.br/sco/abrirCadastro.do
+url-6d08b93a7fd6d2,src-06ccb6cb41bccc,principal,0,\N,https://sistemas.anac.gov.br/
 url-6d0e7097566a60,src-af8a043ae270e7,principal,0,\N,https://portalibre.fgv.br/
 url-6d200cbb3f450c,src-dd296f3165150e,principal,0,\N,https://dados.gov.br/swagger-ui/index.html
 url-6d362fe7954e38,src-e318706ff06b42,principal,0,\N,https://www.google.com/search?q=site%3Amil.br
@@ -2140,6 +2163,7 @@ url-70645c034ad129,src-9a1e0f9a52844e,principal,0,\N,https://www.ioepa.com.br/
 url-70706a96b2c148,src-9c6817a815a538,principal,0,\N,https://www.ipsos.com/pt-br
 url-7071b273fdc5a0,src-98a89931d88275,principal,0,\N,http://sigma.cptec.inpe.br/fortracc/
 url-7084a2d5bd9f19,src-fb6acddc1c8d50,principal,0,\N,https://t.me/AgentFNS_bot
+url-709974a02b0a32,src-b4e4b1a4ffb7b2,principal,0,\N,https://www.tesourotransparente.gov.br/ckan/
 url-70a6e1a886da6b,src-8fbea217a85a43,principal,0,\N,https://webas.sefaz.pi.gov.br/MEI-WEB/
 url-70b54dccccd0e4,src-aaea1f6a46a6bd,principal,0,\N,https://radiocentral77.com.br/noticias/
 url-70c9256cb17e9f,src-2d856f94a1b85e,principal,0,\N,https://daer.kopp.com.br/ftp/imagem.php?id=Glorinha
@@ -2191,6 +2215,7 @@ url-72cbed3423c509,src-5db868f4ef190a,principal,0,\N,https://dados.ons.org.br/
 url-72f3e9f380b9c3,src-7b49b37a5c0618,principal,0,\N,https://www.camara.leg.br/busca-portal/proposicoes/votacoes
 url-7303fc00973fd8,src-8c972d0793c86b,principal,0,\N,https://bemtevi.segurancapublica.sc.gov.br:10311/Interface/Cameras/GetJPEGStream?Camera=BGC_CEN_020&width=1920&height=1080
 url-73161c9be839ab,src-7f6302b36d57fd,principal,0,\N,https://mapas.inmet.gov.br/#
+url-731e6729b33c79,src-a892afdc0d0b81,principal,0,\N,https://dados.antt.gov.br/dataset/vale-pedagio-obrigatorio
 url-7359d7e4fcf793,src-c7a924bfd946e5,principal,0,\N,http://docs.ckan.org/en/2.6/api/
 url-737181784332f6,todo-ead0d4b02c7cbe,relacionada,1,Código-fonte e dados,https://github.com/lockfale/OSINT-Framework
 url-7372f4a5873c62,src-174f0941403aa4,principal,0,\N,https://www.rr.getran.com.br/site/apps/nada-consta/filtroPessoaNadaConsta.jsp
@@ -2225,6 +2250,7 @@ url-74c7a94f348f0f,src-2b5c1f26405b9e,principal,0,\N,https://github.com/osintbra
 url-74e9b82c1d3210,src-c2bc9f37b48740,principal,0,\N,https://trends24.in/SEU_ALVO/
 url-74effc9c1b71f3,src-991666a070bd24,principal,0,\N,https://www.i-intelligence.eu
 url-7516b6d57937be,src-9d2a3f63c180a6,principal,0,\N,https://ais.cavok.in/lichab/
+url-7516b958786408,src-1dc3e0e6322429,relacionada,2,Diretório histórico legado,https://www.transparencia.sp.gov.br/PortalTransparencia-Report/historico/
 url-751a5e0b5763b1,src-8e78525db22c41,principal,0,\N,https://ftp.cptec.inpe.br/modelos/tempo/SAMeT/Read-me.pdf
 url-751e0a01c7f1e4,src-ba1186ff53080f,principal,0,\N,https://www.searchbug.com
 url-7528a998994b3a,src-389af44abc8242,principal,0,\N,https://www.crunchbase.com
@@ -2308,8 +2334,10 @@ url-7912aa21458123,src-217797ef580206,principal,0,\N,https://manuais.processoele
 url-79189119f8ec25,src-3668a1df7c409c,principal,0,\N,https://www.monster.com
 url-7921b23639302d,src-76b8d52e322cf5,principal,0,\N,https://www.cmva.es.gov.br/dados_abertos/api/webservice
 url-792ff9fa84b98d,src-4df90cc3e60d53,principal,0,\N,https://www.google.com/search?q=%22SEU_ALVO%22+%22filho+de%22+%7C+%22filha+de%22+%22natural+de%22
+url-794521104f5fe7,src-1dc3e0e6322429,relacionada,0,CSV corrente de remuneração,https://www.transparencia.sp.gov.br/Remuneracao/Download?arquivo=Remuneracao.csv
 url-794c0e8c6243e9,src-9c0b774417adb9,principal,0,\N,https://www.google.com/search?q=site%3Acom.br+ext%3Asql+%22CREATE+TABLE%22
 url-7956050d64fa61,src-2102abca8d4101,principal,0,\N,https://www.ecovias.com.br/boletim/camera/8
+url-7971131b077ce5,src-b6b896ccd5c962,principal,0,\N,https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/microdados/encceja
 url-7978d3a963a0c8,src-a2b29ba7153f54,principal,0,\N,https://pastebin.fi/
 url-7990b07c1ad2d4,src-c36165bda5cc28,principal,0,\N,https://batchgeo.com
 url-799a2fcc2bd1a0,src-39b7a64eca38da,principal,0,\N,https://www.crp23.org.br/api
@@ -2323,6 +2351,7 @@ url-79cc3f5be587e2,src-3d332c9906c98d,principal,0,\N,https://www.google.com/sear
 url-79de9232a7505e,src-c496a4e0d7e4a2,principal,0,\N,https://play.google.com/store/apps/details?id=br.gov.sinesp.cidadao.android
 url-79e357e16f42e9,src-96e65c60b7af30,principal,0,\N,https://docs.ckan.org/en/2.1/api/
 url-79f458ee23d5ae,src-7f91a663917f5c,principal,0,\N,https://www.to.gov.br/sefaz/documentacao/4zw4v3wp9rrc
+url-7a02f886141d57,src-2065e1f3669d9f,principal,0,\N,https://docs.quantilica.com/fontes/ipea/ipeadata-fetcher/
 url-7a03fb1bd5b4d2,src-b291771f9a17f7,principal,0,\N,http://nfe.sefaz.ba.gov.br/
 url-7a0d23e3969949,src-12ac530a5a4ba1,principal,0,\N,https://www.cepii.fr/CEPII/en/welcome.asp
 url-7a1200f47433eb,src-d671032767b6d9,principal,0,\N,https://sefaz.ac.gov.br/
@@ -2422,6 +2451,7 @@ url-7f6dfc944093e5,src-9468673f352728,principal,0,\N,https://www.socialbakers.co
 url-7f995d3605b35b,src-7c6ea0f0547633,principal,0,\N,https://webas.sefaz.pi.gov.br/caginweb/
 url-7fa4495b71b4b8,src-0d8c3dd7aea494,principal,0,\N,https://datasus.saude.gov.br/informacoes-financeiras/
 url-7faa65103c166b,src-8f18b7bffd2ece,principal,0,\N,https://www.tjma.jus.br/midia/tecnologia/pagina/hotsite/509869/acesso-automatizado
+url-7face3e84ae04d,src-92bf71eb67bc8c,principal,0,\N,https://docs.quantilica.com/fontes/tesouro/pgfn-fetcher/
 url-7fb70a4fe90235,src-f16fd0c36a0690,principal,0,\N,https://www.semrush.com
 url-7fb71f7c58c972,src-9a3c83c0fe4729,principal,0,\N,https://sapl.jaru.ro.leg.br/sessao/pesquisar-sessao
 url-7fb976faac2b5a,src-52510d9b462092,principal,0,\N,https://ssp.imcce.fr/webservices/miriade/
@@ -2476,8 +2506,10 @@ url-81a748e4a91111,src-475d6fcd25245d,principal,0,\N,https://rondonia.ro.gov.br/
 url-81ae286bf7cd6d,src-fa857181fa982a,principal,0,\N,https://www.google.com/search?q=%22SEU_ALVO%22+%22recupera%C3%A7%C3%A3o+judicial%22+%7C+%22fal%C3%AAncia%22+%7C+%22penhora%22
 url-81c1f3e66acbcd,src-af8ba8319b1a19,principal,0,\N,https://www.bing.com/search?q=%22SEU_ALVO%22+loc%3ABR+language%3Apt
 url-81d9991bf92c32,src-be9b873dd8633e,principal,0,\N,https://github.com/JMarchiori13/osint-recon
+url-81da6f1c2f7b4e,src-ee6d3eb72d3d74,principal,0,\N,https://dados.antt.gov.br/dataset/ciot
 url-81e1a214c436ed,src-8281b27e42974a,principal,0,\N,https://www.aware-online.com/osint-tools/
 url-81e2331b584b43,src-f24878aca33549,principal,0,\N,https://portaldatransparencia.gov.br/download-de-dados/despesas-favorecidos
+url-81f5658088cbb5,src-702a957545464e,relacionada,0,Arquivo ZIP de dados do Infosiga,https://infosiga.detran.sp.gov.br/painel/download/file/dados_infosiga.zip
 url-8205ce59cdf541,src-84dfee8707141d,principal,0,\N,https://geodados.mt.gov.br/server/help/en/rest/router.html?f=rest/services
 url-824454852d89e4,src-773467e97611f4,principal,0,\N,https://siem-servicos-api.cfm.org.br/swagger-ui/index.html
 url-824924df54a367,src-14933cdbc9fff9,principal,0,\N,https://www.mozilla.org
@@ -2511,6 +2543,7 @@ url-8360478bd76809,src-a30e69dd3acc61,principal,0,\N,https://geoservicos.ibge.go
 url-8364f497e83760,src-4d4491094a5b11,principal,0,\N,https://forensics.media/tools/
 url-8374d332a3db5d,src-09976617fade1c,principal,0,\N,https://www.gov.br/censipam/pt-br/atuacao/monitoramento-do-desmatamento
 url-837d88074b7cad,src-522e7d3e30de68,principal,0,\N,https://www.gov.br/inep/pt-br/areas-de-atuacao/pesquisas-estatisticas-e-indicadores/indicadores-de-qualidade-da-educacao-superior/indice-geral-de-cursos-igc
+url-837e4c463e32e9,src-a2a4b12de24863,relacionada,0,Endpoint CKAN package_list da CAPES,https://dadosabertos.capes.gov.br/pt_BR/api/3/action/package_list
 url-8382d9a9aa2127,src-7538429fa7e0c8,principal,0,\N,https://Jsbin.com
 url-838a4fe7949e93,src-eb672e5b85d694,principal,0,\N,https://jurisprudencia.stf.jus.br/
 url-839a5aca246008,src-aefdab145f9832,principal,0,\N,https://dadosabertos.sp.gov.br/manual
@@ -2522,6 +2555,7 @@ url-83e90d8a866e94,src-090aa87f30aa02,principal,0,\N,https://www.pic2map.com/
 url-83e913f0798c0f,src-a5b39835c55bef,principal,0,\N,https://portal.tcu.gov.br/
 url-83fb649bc4e12a,src-b9d682f5b0a72c,principal,0,\N,https://create.visual.ly
 url-83fdfa50668a78,src-855d3a9ed41caf,principal,0,\N,https://www.alertarolim.com.br/
+url-84028602ac7700,src-8c8ff7d1ea32e8,principal,0,\N,https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/microdados/enade
 url-84118d15dd4efd,src-2f002faf426f33,principal,0,\N,https://www.tse.jus.br/servicos-eleitorais/autoatendimento-eleitoral#/certidoes-eleitor/certidao-crimes-eleitorais
 url-8415bd62744caa,src-cd33fe8d87d9d1,principal,0,\N,https://mapas.climaesaude.icict.fiocruz.br/
 url-841a4603ad4a07,src-0bbb9833eb9445,principal,0,\N,https://www.arcgis.com/home/webmap/viewer.html?url=https%3A%2F%2Farcgis.sema.df.gov.br%2Fserver%2Frest%2Fservices%2FAreas_Queimadas%2FMapServer&source=sd
@@ -2618,6 +2652,7 @@ url-88ac207080723d,src-b934ab52901a0a,principal,0,\N,https://etransparente.tjro.
 url-88b4ff959cca45,src-d075c0689ec99a,principal,0,\N,https://www.google.com/alerts
 url-88b9edd9c90d2b,src-06a086256e9599,principal,0,\N,https://dados.turismo.gov.br/dataset/
 url-88c0058503511d,src-6b06378ebc831b,principal,0,\N,https://images.google.com
+url-88c8219777babf,src-362dd869587a6b,relacionada,0,Diretório de downloads do INEP,https://download.inep.gov.br/
 url-88dd3fce2515f9,src-6b57d80fd0cc21,principal,0,\N,https://vk.com/people
 url-88e231f094307f,src-af06f6ef99bbee,principal,0,\N,https://dadosabertos.rj.gov.br/api/3/action/help_show
 url-88e9bc5788970a,src-b37c951351dbd9,principal,0,\N,https://yandex.com/search/?text=%22SEU_ALVO%22+mime%3Axls+%7C+mime%3Adoc+lang%3Apt
@@ -2635,6 +2670,7 @@ url-89b86e2ad185a0,src-a4373b97d2b6c8,principal,0,\N,https://qgis.org
 url-89baee5c2d00b6,src-312050eeaa507d,principal,0,\N,https://cimps.sp.gov.br/dados-abertos
 url-89d26cbe83f1b6,src-ce7e96e1d9bf0e,principal,0,\N,https://haveibeenzuckered.com/
 url-89d3349aa93bad,src-6a31b95b0d92ac,principal,0,\N,https://talosintelligence.com/reputation_center
+url-89ee037f040fd0,src-948250585f30fa,principal,0,\N,https://dadosabertos.pgfn.gov.br/
 url-89f2c491558ddb,src-a55653ac438ee6,principal,0,\N,https://www.tse.jus.br/servicos-eleitorais/certidoes
 url-8a04f4ca536fd7,src-0be8e9aee55220,principal,0,\N,https://onda.ibram.df.gov.br/server/help/en/rest/router.html
 url-8a11819ab61a85,src-9bdc28041e9ff7,principal,0,\N,https://www.cmm.am.gov.br/rest-api/docs/
@@ -2687,6 +2723,7 @@ url-8c1bad3bfcc9d0,src-502ed4975d1187,principal,0,\N,https://www.google.com/sear
 url-8c1cd405eb443c,src-ea062021e1ae24,principal,0,\N,https://sistemas.anac.gov.br/dadosabertos/
 url-8c264e9fc10dc2,src-458f06ac232429,principal,0,\N,https://processo.stj.jus.br/processo/ita/
 url-8c27fa2cbf3946,src-a461b8f6ec4f50,principal,0,\N,https://www.aneel.gov.br/area.cfm?idArea=550
+url-8c28be7fab9563,src-4b05058d5e7483,principal,0,\N,https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/microdados/pnd
 url-8c2bdd8180cd5f,src-12c0200d1924d0,principal,0,\N,https://www.google.com/search?q=%22SEU_ALVO%22+site%3Aportaldatransparencia.gov.br+%7C+inurl%3Atransparencia
 url-8c3268515ec134,src-baec01bbdda476,principal,0,\N,https://sintoniaderondonia.com.br/
 url-8c44f28da300ff,src-d4163cbf2aecc1,principal,0,\N,https://observatorio.sepog.ro.gov.br/segurancapublica/indicadores
@@ -2766,10 +2803,12 @@ url-8f5a5b4851853d,src-6951232b6e7899,principal,0,\N,https://portal1.snirh.gov.b
 url-8f5d857c12c634,src-59aabdda67172f,principal,0,\N,https://www.gov.br/servidor/pt-br/observatorio-de-pessoal-govbr/painel-estatistico-de-pessoal/
 url-8f6645f77aa385,src-8648b8851ea0cf,principal,0,\N,https://www.google.com/search?q=%22SEU_ALVO%22+%22invent%C3%A1rio%22+%7C+%22esp%C3%B3lio+de%22+%7C+%22herdeiros%22
 url-8f6d9de4f63746,src-f7ea3379856e18,principal,0,\N,https://github.com/snooppr/snoop/blob/master/README.en.md
+url-8f74e74c211649,src-3e2ddb0d46b05a,principal,0,\N,https://www.bcb.gov.br/
 url-8f7efba7c7ff98,src-ccb94be8d23d8d,principal,0,\N,https://plataforma.monitormineracao.mapbiomas.org/
 url-8f896979aeb39d,src-e902af7a2c1f1b,principal,0,\N,https://dadosabertos.mec.gov.br/api/3/action/help_show?name=package_list
 url-8f8a5f613c46c1,src-5f331eac8f598e,principal,0,\N,https://pesquisaempresas.com.br/
 url-8fb5a0961ad876,src-a2e0463212309c,principal,0,\N,https://www.al.ro.leg.br/eventos/
+url-8fbc97b1e10cec,src-40a70886db96ae,principal,0,\N,https://docs.quantilica.com/fontes/energia/ons-fetcher/
 url-8fbf81574f0c0a,src-e01a15bc1feddb,principal,0,\N,https://satelite.inmet.gov.br/
 url-8fc91a0b63f095,src-aad3654ec61033,principal,0,\N,https://docs.google.com/spreadsheets/u/0/d/1H9_xaxQHpWaa4O_Son4Gx0YOIzlcBWMsdvePFX68EKU/pubhtml?pli=1#
 url-8fe00632871b40,src-8b3f5c93f3d355,principal,0,\N,https://rondonia.ro.gov.br/DER/
@@ -2834,6 +2873,7 @@ url-92584c68613a99,src-7d19f31ce80157,principal,0,\N,https://github.com/kaifcode
 url-925871e2870abe,src-2d9c19c91075c6,principal,0,\N,https://corenma.gov.br/site2/
 url-9262e07a9e8b79,src-b804c6d16ea4ae,principal,0,\N,https://www.stm.jus.br/servicos-ao-cidadao/atendimentoaocidadao/certidao-negativa?view=default
 url-9266fde9d27bd4,src-01417bc715779b,principal,0,\N,https://rondonia.ro.gov.br/seduc/dados-abertos/gestao-educacional/
+url-927b4f35db6228,src-377bcdf8d4a424,principal,0,\N,https://dadosabertos.pgfn.gov.br/2026_trimestre_03/Dados_abertos_Sistema_SIDA.zip
 url-9283c14093fd79,src-853a63f3307cef,principal,0,\N,https://clarify.io
 url-928b23311bee66,src-1efaefc9b518ae,principal,0,\N,https://docs.ckan.org/en/2.9/api/
 url-9296a5415e8678,src-a9fd0c3cb38878,principal,0,\N,https://insecam.org/
@@ -2843,6 +2883,7 @@ url-92c445a49f425a,src-d7244071de0cfe,principal,0,\N,https://www.gov.br/inep/pt-
 url-92c5456fb7a13d,src-2f46e0dba21aa8,principal,0,\N,https://acessoainformacao.anapolis.go.gov.br/cidadao/outras_informacoes/acesso_automatizado
 url-92ce7ddbd8708d,src-68b6ac7f6fac4f,principal,0,\N,https://safenote.co/
 url-92d2d1f88da99b,src-97a82fb5f34ef5,principal,0,\N,https://cachedview.com
+url-92d303e62d1c78,src-186693ec501df6,principal,0,\N,https://dados.antt.gov.br/dataset/volume-trafego-praca-pedagio
 url-92e21879c3b666,src-072cce2d4a2107,principal,0,\N,https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/inep-data/catalogo-de-escolas/
 url-931cb3c78eb578,src-fcca303e286827,principal,0,\N,https://consultasaj.tjam.jus.br/sco/abrirCadastro.do
 url-93201e0cd12f01,src-2bde19ea9e1fd7,principal,0,\N,https://treinamento.api.eprotocolo.pr.gov.br/spi-servicos/inicial.html
@@ -2851,6 +2892,7 @@ url-93274c2c7273dd,src-a5f14e90cf2123,principal,0,\N,https://sei.anatel.gov.br/s
 url-933bf565995abb,src-4ad2e4a64f2cb4,principal,0,\N,https://www.tre-al.jus.br/
 url-933d9f8a9d099d,src-7d71ed2a8a3fb1,principal,0,\N,https://imprensaoficial.rr.gov.br/
 url-9349b3fd4bcdef,src-cb6878d4a51789,principal,0,\N,https://www.ecmwf.int/en/forecasts/datasets/complete-era5-global-atmospheric-reanalysis
+url-935a4bafb9ca2b,src-94931644b7ff97,relacionada,1,Endereço legado do GeoSGB,https://geosgb.sgb.gov.br/
 url-936ba0365aba6f,src-290ae40b5b305f,principal,0,\N,https://geoportal.apac.pe.gov.br/portal/sharing/rest/portals/info
 url-9380ae35b2f2c0,src-ea4f637b7075da,principal,0,\N,https://www.isp.rj.gov.br/
 url-9395b05ba80599,src-d271b71f181489,principal,0,\N,https://oti-labs.com/domain-intelligence-api
@@ -2864,7 +2906,9 @@ url-93d714773b0ec8,src-6253495a27a370,principal,0,\N,https://www.google.com/sear
 url-93ec810abf5ead,src-66c04ad79943ee,principal,0,\N,https://en.wikipedia.org/wiki/List_of_company_registers
 url-93f3401c989947,src-7209dea5ded910,principal,0,\N,https://www.eyedex.org/
 url-93fb647170b1a3,src-8d3fbd0e36e5c6,principal,0,\N,https://transparencia.al.ro.leg.br/Diario/
+url-9406c3df9c3bb5,src-ebd4110bdfbd77,relacionada,0,Dados históricos do INMET,https://portal.inmet.gov.br/dadoshistoricos
 url-9407fd11382675,src-34aab20ec202ea,principal,0,\N,https://www.gov.br/mj/pt-br/assuntos/sua-seguranca/seguranca-publica/operacoes-integradas/projeto-captura
+url-942933e2b5be5f,src-a3c34fd35bd49e,relacionada,0,Diretório ODSELE de dados eleitorais,https://cdn.tse.jus.br/estatistica/sead/odsele/
 url-9438e95aa36fb3,src-c189eb655a6ef5,principal,0,\N,https://offshoreleaks.icij.org/pages/database
 url-945b6e66524966,src-a0e34e6bbb12d6,principal,0,\N,https://www.campogrande.ms.gov.br/acesso-automatizado-api/
 url-946db922f042d3,src-917cc6668c50b8,principal,0,\N,https://brasil.mapbiomas.org/iniciativas-e-produtos/solo/
@@ -2932,6 +2976,7 @@ url-976aec8c80a36a,src-d3573a9bb965fb,principal,0,\N,https://maracatu.org/fontes
 url-977240d1f9060c,src-3254e7646c4574,principal,0,\N,https://www3.tjrj.jus.br/CJE/certidao/
 url-97963a67d52b11,src-389dc06a5d9b46,principal,0,\N,https://app.netlas.io/
 url-9796510666759a,src-dc1d214eab586a,principal,0,\N,https://www.opera.com
+url-979c8537df5537,src-1bc655188629cc,principal,0,\N,https://sistemaswebb3-listados.b3.com.br/
 url-97a24e49572d2e,src-5991e53c3c58a1,principal,0,\N,https://projudi.tjgo.jus.br/CertidaoNegativaPositivaPublica?PaginaAtual=1&TipoArea=2&InteressePessoal=S
 url-97af5a083a158f,src-39cf809df2491d,principal,0,\N,https://www.gov.br/funai/pt-br/atuacao/terras-indigenas/geoprocessamento-e-mapas
 url-97b3ef92512376,src-6550d3806ab803,principal,0,\N,https://online-barcode-reader.inliteresearch.com
@@ -3034,6 +3079,7 @@ url-9cd0909c83ec97,src-1bdd75cb53df66,principal,0,\N,https://transparencia.ro.go
 url-9cda75976d4f55,src-b326443e5ce215,principal,0,\N,https://www.google.com/search?q=%22SEU_ALVO%22+%22dispensa+de+licita%C3%A7%C3%A3o%22+%7C+%22inexigibilidade%22+%7C+%22preg%C3%A3o+eletr%C3%B4nico%22+ext%3Apdf
 url-9cf6972a874e74,src-041e3146aad76c,principal,0,\N,https://codefinder.dev/
 url-9d0f37990cfd3d,src-d6eafa58bb751a,principal,0,\N,https://dados.agricultura.gov.br/dataset
+url-9d2bcfffc2732d,src-f1e67102134373,principal,0,\N,https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/microdados/idd
 url-9d3575e9dddb47,src-943397bfd81e1d,principal,0,\N,https://queridodiario.ok.org.br/api/
 url-9d38a3c913848b,src-d102734b314844,principal,0,\N,https://github.com/owasp-amass/amass
 url-9d3dfd717b68cc,src-735df2710003ea,principal,0,\N,https://unicourt.com/
@@ -3047,22 +3093,26 @@ url-9d88259e65d547,src-d7626683fe0dab,principal,0,\N,https://www.bing.com/search
 url-9d8aa5b6f0c1c6,src-1655f7928bce29,principal,0,\N,https://github.com/bibanon/tubeup
 url-9d9dd10fe28f93,src-1e82186caf6256,principal,0,\N,https://sapl.jiparana.ro.leg.br/
 url-9d9e0c20f0de06,src-0334cb8374e06b,principal,0,\N,https://projudi.tjgo.jus.br/CertidaoNegativaPositivaPublica?PaginaAtual=1&TipoArea=2&InteressePessoal=S
+url-9db4b71f6f40a8,src-10b5d8b57ff32b,principal,0,\N,https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/microdados/talis
 url-9dc3655b80a6cb,src-65391505fc0af0,principal,0,\N,https://www.google.com/search?q=%22SEU_ALVO%22+%22edital+de+cita%C3%A7%C3%A3o%22+%7C+%22edital+de+intima%C3%A7%C3%A3o%22
 url-9dc55a8cb5b2db,src-b7efb0ea840e72,principal,0,\N,https://www.osintcat.net/
 url-9dcc1adaf4447d,src-37b5e62f2de0b2,principal,0,\N,https://github.com/nox-project/nox-framework
 url-9ddc13945dcf60,src-5ccb051f51efe3,principal,0,\N,https://www.vrbo.com/pt-br/
 url-9de2bf4b0ff18b,src-80f04ad2216580,principal,0,\N,https://www.detran.go.gov.br/psw/#/pages/conteudo/prontuario-cnh
+url-9df1597b2525b2,src-fd1658259733bf,relacionada,2,SACE — bacia do Amazonas,https://sace.sgb.gov.br/index_bacias_monitoradas.php?getbacia=bamazonas
 url-9dfa0f195d97ec,src-c12e447cfae311,principal,0,\N,https://www.prefeitura.sp.gov.br/cidade/secretarias/mobilidade/institucional/sptrans/acesso_a_informacao/index.php
 url-9e22a1872f76ad,src-9837957b33b1b9,principal,0,\N,https://sistemas.tce.pe.gov.br/DadosAbertos/Exemplo!listar
 url-9e4466e324cd3e,src-5e0dd10ad1c9db,principal,0,\N,https://flourish.studio/
 url-9e4f8bb4e1d6ff,src-a90007aa595998,principal,0,\N,https://neo4j.com/product/bloom/
 url-9e4f99f84eba09,src-96352243e4ac8c,principal,0,\N,https://www.gov.br/fnde/pt-br/assuntos/sistemas/sigpc-agil/sigpc-agil
+url-9e502c73d767d0,src-442565f4513ff1,principal,0,\N,https://docs.quantilica.com/fontes/governo/transparencia-sp-fetcher/
 url-9e7b740297dc2c,src-f6493780cf19da,principal,0,\N,https://search.earthdata.nasa.gov/
 url-9e8093113f98c7,src-b5aa7164aa296d,principal,0,\N,https://www.cyotek.com/cyotek-webcopy
 url-9e970b86fc4382,src-4f93a2f6e5a60d,principal,0,\N,https://app.validin.com/
 url-9eb069c6be59e8,src-5232d74f4992cd,principal,0,\N,https://www.gov.br/mdh/pt-br/ondh/painel-de-dados
 url-9ed108ec474754,src-aacde4f607f848,principal,0,\N,https://www.kompass.com
 url-9edd025f8db5a7,src-71b317ee80f963,principal,0,\N,https://www.rolimnoticias.com.br/
+url-9eed70a2f56bd2,src-2f9019f1db1f57,principal,0,\N,https://huggingface.co/datasets/cnpjaberto
 url-9eef76a32e2d5e,src-b01a34cd6f8b35,principal,0,\N,https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/indicadores-de-qualidade-da-educacao-superior
 url-9ef454bd65252e,src-8f2be142abe6ff,principal,0,\N,https://www.gov.br/compras/pt-br/painel-covid
 url-9ef6406b467f60,src-c33ddb955feb11,principal,0,\N,https://nsidc.org/data/smap
@@ -3108,6 +3158,7 @@ url-a12d4038ab1894,src-77b2160ab735ab,principal,0,\N,https://apicadprev.trabalho
 url-a13020fc02dc23,src-878933bac78e16,principal,0,\N,https://en.groupio.app/
 url-a1332dd067de70,src-a2f751464593df,principal,0,\N,https://gerdoo.me
 url-a141f25e6db94f,src-71a9f2fc4dc62c,principal,0,\N,https://relatedrepos.com/
+url-a148182b559571,src-c5ac296b87df86,relacionada,1,Download de dados do CEIS — Portal da Transparência,https://portaldatransparencia.gov.br/download-de-dados/ceis
 url-a14a742c9b0d89,src-9de32c421a64e7,principal,0,\N,http://www.tcesc.tc.br/apis-dados-abertos
 url-a175c7206c2159,src-84d7a8376cddb5,principal,0,\N,http://www.ons.org.br/paginas/resultados-da-operacao/historico-da-operacao
 url-a17f928e7f2d25,src-dace53da556665,principal,0,\N,https://www.tce.se.gov.br/
@@ -3148,6 +3199,7 @@ url-a34bccee8cb7d0,src-2c85f312132d1c,principal,0,\N,https://acessoinformacao.co
 url-a3595a4ce10962,src-36802a1adb40ec,principal,0,\N,https://acessoainformacao.cidersp.go.gov.br/cidadao/outras_informacoes/acesso_automatizado
 url-a3644ef998caa0,src-561b04c89ff618,principal,0,\N,https://transparencia.ro.gov.br/sus/relacao-estadual-de-medicamentos-essenciais
 url-a39e8b14aabd28,src-c1eb073571fd8d,principal,0,\N,https://www.ajol.info
+url-a3b0c56faa8268,src-8cd68a59e3a4fe,principal,0,\N,https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/microdados/pesquisa-de-acoes-discriminatorias-no-ambito-escolar
 url-a3b5b16cc98514,src-a5bd1fc9dc7dc6,principal,0,\N,https://securitytrails.com/
 url-a3b5ca8d7737d9,src-66be763bcad373,principal,0,\N,https://www.gov.br/senappen/pt-br/servicos/sisdepen
 url-a3b81d3aad71e8,src-c66b776b3ee02b,principal,0,\N,https://www.estantevirtual.com.br/
@@ -3202,6 +3254,7 @@ url-a6dfa1617b51a1,src-a77dc6764c83eb,principal,0,\N,https://publicacoes.forumse
 url-a6e07dc117caf8,src-f876babdf8df2a,principal,0,\N,https://www.tensons.com/products/websiterippercopier
 url-a6e3b099ff8b21,src-be1556f8f735ed,principal,0,\N,https://github.com/bellingcat/auto-archiver
 url-a6ec6ac4000ab0,src-7422e90446a74f,principal,0,\N,https://logibook.dataint.net
+url-a6f52fa37f552a,src-10bd63172f6b20,relacionada,0,"Documentação da API de Agregados, versão 3",https://servicodados.ibge.gov.br/api/docs/agregados?versao=3
 url-a6fd4f5ba8dc87,src-e7ff95f7a70634,principal,0,\N,https://sistemas.sptrans.com.br/licitlovnew/hilicwebfrtap.aspx
 url-a701f91030d680,src-a60ed140a94db7,principal,0,\N,https://www.tce.ms.gov.br/
 url-a702b68db4b0cb,src-e7367f1355a4a9,principal,0,\N,https://www.baidu.com
@@ -3389,6 +3442,7 @@ url-afd7ca55eb1b13,src-2be150b8a86a0a,principal,0,\N,https://digg.com/login?next
 url-afe85286c233ad,src-dd3fa86028cba4,principal,0,\N,https://exifeditor.io
 url-b00556c46a140e,src-ea3837cbf5cd8a,relacionada,0,Página inicial do portal,https://dados.gov.br/home
 url-b00a21717e5825,src-22914ef3819e37,principal,0,\N,https://onion.ail-project.org/
+url-b00ac3c0c2fa95,src-b8a74866028102,relacionada,1,Aviso de manutenção,https://www.sgb.gov.br/manutencao/
 url-b01359bb3de988,src-679ec06252021f,principal,0,\N,https://tweetreports.com/twitter-chat-schedule
 url-b0171813d49e6c,src-d960846645139c,principal,0,\N,https://www.tse.jus.br/servicos-eleitorais/autoatendimento-eleitoral#/atendimento-eleitor/acompanhar-solicitacao
 url-b018f901ca3dd8,src-f36f3881bae14b,principal,0,\N,https://github.com/eDemocracia/edemocracia
@@ -3412,6 +3466,7 @@ url-b0bff031448e79,src-4635c4052676d4,principal,0,\N,https://petrolina.pe.gov.br
 url-b0cb66c80f7e17,src-25553e8a89b064,principal,0,\N,https://transparencia.ro.gov.br/fornecedor/fornecedoresimpedidos
 url-b0cdf5c9d37d82,src-04ef9d3154e0a2,principal,0,\N,https://gruposdezap.com/
 url-b0da185b967ded,src-fccccfde2d79e2,principal,0,\N,https://search.twitter.com
+url-b1096da13bd91f,src-1dc3e0e6322429,principal,0,\N,https://www.transparencia.sp.gov.br/Remuneracao
 url-b10d657d5aee1d,src-fd6d920aea35a9,principal,0,\N,https://www.cpc.ncep.noaa.gov/products/precip/CWlink/daily_mjo_index/mjo_index.shtml
 url-b1102ed86a43ef,src-0a7f0187761319,principal,0,\N,https://geo.infrasa.gov.br/server/rest/services
 url-b11158289b5b90,src-5901c1efbdb262,principal,0,\N,https://changedetection.io
@@ -3441,6 +3496,7 @@ url-b2b4af9d2de695,src-45df49c124cd3a,principal,0,\N,https://github.com/felipelu
 url-b2bdc19628c3bb,src-4a465b3350845b,principal,0,\N,https://sapl.al.ro.leg.br/sistema/frente/
 url-b2c7d34afacd07,src-50fca4ee98ddbc,principal,0,\N,https://data.unicef.org/
 url-b2d1c2ea82f622,src-8cc2055eeb5739,principal,0,\N,https://eleicoes26.institutoverita.com.br/
+url-b2e3670815fcc8,src-178542ae8a0ba7,principal,0,\N,https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/microdados/ana
 url-b2f7a6d8a7db69,src-6a6692f6331f69,principal,0,\N,https://www.einvestigator.com/
 url-b30857b6ec201d,src-0ab93fb58ae030,principal,0,\N,https://www.gov.br/empresas-e-negocios/pt-br/redesim
 url-b30ef65e768dad,src-4906f0da89e490,principal,0,\N,https://netlas.io/
@@ -3510,8 +3566,10 @@ url-b5de68af256169,src-5a8957e10439ac,principal,0,\N,https://tesjmu.stm.jus.br/t
 url-b5e4f1b319b47b,src-1e60b23ebed4f1,principal,0,\N,https://www.world-newspapers.com
 url-b60ba1fd9771ba,src-3dc0a9467225e8,principal,0,\N,https://www.trf4.jus.br/
 url-b60f0843825714,src-d228747902ce69,principal,0,\N,https://www.tcmgo.tc.br/site/portal/acesso-automatizado-aos-dados-abertos-api/
+url-b6114d6d84bfd3,src-a72ef12dc29848,relacionada,0,Portal PDET de microdados RAIS e CAGED,http://pdet.mte.gov.br/microdados-rais-e-caged
 url-b61c361c502333,src-a3be5235d589aa,principal,0,\N,https://www.tse.jus.br/servicos-eleitorais/certidoes
 url-b62752f3792030,src-745a22106ffe9d,principal,0,\N,https://github.com/smicallef/spiderfoot
+url-b62c8b5d504adc,src-f831be90731d9a,relacionada,0,API Ipeadata OData v4,https://www.ipeadata.gov.br/api/odata4/
 url-b6314e45081224,src-ebfe25793a6577,principal,0,\N,https://www.usgs.gov/centers/eros/science/usgs-eros-archive-digital-elevation-global-30-arc-second-elevation-gtopo30
 url-b6637a6b61dcc7,src-9271d705f45b23,principal,0,\N,https://t.me/geomacbot
 url-b67867a94e0c62,src-410f1bd8da1007,principal,0,\N,https://caerd.ro.gov.br/
@@ -3588,11 +3646,13 @@ url-b9e568ef0c3701,src-c95332f814a4f4,principal,0,\N,https://storymap.knightlab.
 url-b9e61d0a430192,src-5a6a719140c0af,principal,0,\N,https://who.is/
 url-b9e9694276e906,src-79188dea77a695,principal,0,\N,https://ricks-apps.com/osx/sitesucker/index.html
 url-b9ee36d275d089,src-ac8d315e559c66,principal,0,\N,https://portaldeinformacoes.conab.gov.br/mercado-atacadista-hortigranjeiro.html
+url-ba02b74279058b,src-8832093c81a8f7,relacionada,0,Portal de Dados Abertos da CAPES,https://dadosabertos.capes.gov.br/
 url-ba03887329a700,src-335c38b0f9066a,principal,0,\N,https://nopaste.net/
 url-ba18557d9c597f,src-6c060064254845,principal,0,\N,https://dados.mma.gov.br/
 url-ba1a275c631289,src-45a2f3c59afcda,principal,0,\N,http://site.ecovias.com.br/cameras/vpon/0kamera1.jpg
 url-ba23cd6ed861db,src-8696f7e9042275,principal,0,\N,https://www.bloomberg.com/research/company/overview/overview.asp
 url-ba2dd08f25d5d3,src-3bf488e53db3e7,principal,0,\N,https://nixintel.info/
+url-ba2ef6cd2a2821,src-bd5d4d0b28cca3,relacionada,0,Base de dados bruta do Comex Stat,https://www.gov.br/produtividade-e-comercio-exterior/pt-br/assuntos/comercio-exterior/estatisticas/base-de-dados-bruta
 url-ba309ae5202b46,src-c90e5466d144db,principal,0,\N,https://app.graphystories.com
 url-ba42c34d2ee1a7,src-7152dcd15770e5,principal,0,\N,https://protonmail.com
 url-ba49c8ab000c8d,src-b382645f7f3f15,principal,0,\N,https://www.gov.br/ans/pt-br/assuntos/noticias/periodo-eleitoral/ans-divulga-9a-edicao-do-mapa-do-ressarcimento-ao-sus
@@ -3732,6 +3792,7 @@ url-c0e1121dc02f85,src-f856dc1b9aceae,principal,0,\N,https://www.pc.rs.gov.br/de
 url-c0ecf300c70b7d,src-d6d84de128d3c2,principal,0,\N,https://www.trt21.jus.br/transparencia/acesso-informacao/acesso-automatizado-por-sistemas-externos
 url-c0f4a135d1978d,src-5fafe366980b10,principal,0,\N,https://transparencia.ro.gov.br/receita/dividaativa
 url-c0f6260eaa6e20,src-dbc3b7cc7d5ffb,principal,0,\N,https://crt.sh/
+url-c0fb631d0af2aa,src-a775f1e9078bb2,principal,0,\N,https://dados.antt.gov.br/dataset/rntrc
 url-c0fb65db94ec6e,src-5834773f46e759,principal,0,\N,https://www.tre-rr.jus.br/
 url-c10d337bc1121a,src-7bd4e51df79243,principal,0,\N,https://camaradetabatinga.am.gov.br/api-dados-abertos/
 url-c11c810bd6bfe8,src-412e5b9e4651e9,principal,0,\N,https://dadosabertos.tse.jus.br/
@@ -3847,6 +3908,7 @@ url-c61e8993ba298f,src-fcee67a89c8c9f,principal,0,\N,https://www.gov.br/anvisa/p
 url-c62f7202cb32e1,src-1c9c1c027864eb,principal,0,\N,https://camerasdaer.perkons.com:60000/DAER-6716
 url-c63bf9a0ed5f95,src-4eab7a7e87784a,principal,0,\N,https://searchisback.com
 url-c63d4febb27dbf,src-8c6d95fa183c4d,principal,0,\N,https://servicos.receita.fazenda.gov.br/Servicos/certidao/
+url-c641591738b728,src-d14d2f12fb2608,principal,0,\N,https://bvmf.bmfbovespa.com.br/InstDados/SerHist/
 url-c653db8c2e5868,src-001f8cac5f8e07,principal,0,\N,https://github.com/GeiserX/Wayback-Diff
 url-c6573ad3b778cb,src-4827925f4bc683,principal,0,\N,https://www.gov.br/receitafederal/pt-br/acesso-a-informacao/acoes-e-programas/programas-e-atividades/arrecadacao
 url-c65b73d68779ce,src-5aed51f12e6418,principal,0,\N,https://rondonia.ro.gov.br/sesau/publicacoes/resolucoes/
@@ -3902,11 +3964,13 @@ url-c8eba14d009999,src-fa456ffb436293,principal,0,\N,https://www.gov.br/tesouron
 url-c8f4c97b88da6f,src-89c539f2cfe1f8,principal,0,\N,https://github.com/osintbrazuca/osint-brazuca
 url-c8f67718f60a2b,src-3b51771d01af61,principal,0,\N,https://transparencia.se.gov.br/DadosAbertos
 url-c8fafc04d048fa,src-e7f56c19cfb10b,principal,0,\N,https://transparencia.mpf.mp.br/conteudo/contracheque
+url-c90dcfd9500332,src-f831be90731d9a,relacionada,2,Endpoint de valores das séries Ipeadata,https://www.ipeadata.gov.br/api/odata4/ValoresSerie
 url-c933da0767d49c,src-cdd0f200d83b35,principal,0,\N,https://www3.al.es.gov.br/dados-abertos.aspx
 url-c9558e54ebb2d3,src-7fcccb2b552b9c,principal,0,\N,https://www.google.com/finance
 url-c960ee4d636737,src-b2c66b32327254,principal,0,\N,https://web3.antaq.gov.br/ea/sense/index.html#pt
 url-c97900bd789c2d,src-5b355306624ec5,principal,0,\N,https://climate.copernicus.eu/climate-reanalysis
 url-c981bf83ca7438,src-af37e9b324692c,principal,0,\N,https://www.keywordspy.com
+url-c999dd4a96206b,src-6f0533147ce2f9,principal,0,\N,ftp://ftp2.datasus.gov.br/pub/sistemas/tup/downloads/
 url-c9a20cdb02444b,src-e966ef3006f207,principal,0,\N,https://cipherstick.tech
 url-c9bdfc22a700a3,src-3813b506250143,principal,0,\N,https://kaponline.com.br/whois/
 url-c9dbb05de3966b,src-729f7a4bbb94ab,principal,0,\N,https://sad2.ancine.gov.br/obraspublicitarias/consultaGeralViaPortal/consultaGeralViaPortal.seam
@@ -3972,6 +4036,7 @@ url-ccefbfaec75628,src-a3378d4ca20933,principal,0,\N,https://portal.stf.jus.br/t
 url-ccf0b4e3a70556,src-450c45b736fbe9,principal,0,\N,https://www.glassdoor.com
 url-cd09833ee33101,src-fd1658259733bf,principal,0,\N,https://sace.sgb.gov.br/
 url-cd0c8f1a0f388b,src-6a79656a8b9fb2,principal,0,\N,https://www.es.gov.br/disquedenuncia
+url-cd0d35e7ce6d3f,src-7821830c346ab1,principal,0,\N,https://docs.quantilica.com
 url-cd22d32e5327e6,src-6b9709089f89e9,principal,0,\N,https://www.gov.br/ans/pt-br/acesso-a-informacao/perfil-do-setor/dados-e-indicadores-do-setor/dados-e-indicadores-do-setor/
 url-cd257dec8bb8b3,src-bc041bfa2890cc,principal,0,\N,https://www.seringueiras.ro.leg.br/documentos-sessoes
 url-cd2f111cebbcfe,src-6a226d6e78fe1c,principal,0,\N,https://detran.pb.gov.br/
@@ -4051,6 +4116,7 @@ url-d041f6196269d6,src-1c0b5465c8e86a,principal,0,\N,https://www.zapmeta.com
 url-d06324978fb1b9,src-418c80e8aa8c73,principal,0,\N,https://docs.ckan.org/en/2.9/api/
 url-d08083114af8c4,src-8a4d8b0408f736,principal,0,\N,https://github.com/instaloader/instaloader
 url-d083944fc7f6f5,src-5e752f0907633c,principal,0,\N,http://certidaoiifppcerj.detran.rj.gov.br/
+url-d090cb5ac54366,src-0083f2f6db9f53,principal,0,\N,https://docs.quantilica.com/fontes/transportes/infosiga-fetcher/
 url-d09b58f5779a76,src-dc3cb76f33a921,principal,0,\N,https://www.sgb.gov.br/sace/index_bacias_monitoradas.php?getbacia=bmadeira
 url-d0b60ac6991d9b,src-ffb40f68fc172f,principal,0,\N,https://nachricht.co/
 url-d0bd5f692f29ad,src-df55d14cf0cf11,principal,0,\N,https://chatsecure.org
@@ -4102,6 +4168,7 @@ url-d3adc5ee101274,src-e0a6c810b4e500,principal,0,\N,https://transparencia.cisap
 url-d3c36435bf8b1b,src-36c75bf4002cd4,principal,0,\N,https://www.ibge.gov.br/panorama/indicadores.html?localidade=BR&tema=7
 url-d3c7efdc290bbf,src-18b2a05efd4f8f,principal,0,\N,https://lens.google/
 url-d3f5dc42fb2bc1,src-4f56afe54716cd,principal,0,\N,https://truescreen.io/c2pa-viewer/
+url-d46de5d0a53ddc,src-215a5cc66ba6df,principal,0,\N,https://dados.antt.gov.br/dataset/praca-de-pedagio
 url-d4944d89ffdbce,src-c24030269f871e,principal,0,\N,https://pandas.pydata.org/
 url-d4b21af1ee8913,src-5d0172ca5e45da,principal,0,\N,https://archiveweb.page/
 url-d4b939c09abffb,src-da870a4e251a4b,principal,0,\N,https://www.ssp.sp.gov.br/estatistica
@@ -4140,6 +4207,7 @@ url-d65f1b678c802b,src-d1bd9384b8fe56,principal,0,\N,https://github.com/its0x08/
 url-d66aa75d8745af,src-1b13426de88bfe,principal,0,\N,https://github.com/khast3x/h8mail
 url-d66b0879701300,src-b53fd92a05bdd9,principal,0,\N,https://t.me/CryptoBot
 url-d67ceb2a902c9f,src-626cb46a54331b,principal,0,\N,https://www.canada411.ca
+url-d695ce8ade6d5f,src-5ec490d5381eae,relacionada,0,API do SIDRA,https://apisidra.ibge.gov.br
 url-d698864399ecfd,src-e010917a7caa93,principal,0,\N,https://informacoes.anatel.gov.br/paineis/acessos
 url-d69b5fe8370ee6,src-ae23ceb3dd0f2e,principal,0,\N,https://modestmaps.com
 url-d6a7969b2a6a6b,src-bd814330505745,principal,0,\N,https://www.tjpr.jus.br/acesso-automatizado-por-sistemas-externos
@@ -4151,6 +4219,7 @@ url-d6ccfa0d7be5fa,src-2b50259943c97d,principal,0,\N,https://github.com/hstsethi
 url-d6d80812b5f8a4,src-078366ece5b8ad,principal,0,\N,https://www.urlvoid.com
 url-d6f107a38314a4,src-9492c4ccf3bc7a,principal,0,\N,https://www.visme.co
 url-d704ac49c9d761,src-2c50c2b70001ef,principal,0,\N,https://cidacs.bahia.fiocruz.br/pdd/
+url-d70c3449ea3468,src-ec3a817fc8e701,principal,0,\N,https://www.bcb.gov.br/estatisticas/tabelaestatistica
 url-d7204ca2456f88,src-3c2d5982bc8538,principal,0,\N,https://www.tabelafipebrasil.com/placa
 url-d7229f54128c19,src-88123b2961147f,principal,0,\N,https://osintframework.com/
 url-d724292d9e2f6f,src-290138326757fd,principal,0,\N,https://app.swaggerhub.com/apis/join_tecnologia/idjovem/1.0.0
@@ -4164,6 +4233,7 @@ url-d7825bb36f95d2,src-3e10fff3c2e0af,principal,0,\N,https://dados.prefeitura.sp
 url-d783109fd9e867,src-89f1a852e5946b,principal,0,\N,https://www.gov.br/car/pt-br/canais_atendimento/perguntas-frequentes/dados-e-informacoes
 url-d7883f2ba00dfb,src-ad7cc00c2289f4,principal,0,\N,https://www.altoalegre.rr.gov.br/dados-abertos
 url-d7929961d84fe6,src-c7e0dd17e02d1a,principal,0,\N,https://datahelpdesk.worldbank.org/knowledgebase/articles/889392
+url-d79de8d3f66d12,src-120b0e1f4082e6,principal,0,\N,https://dados.antt.gov.br/dataset/acidentes-rodovias
 url-d7a80f3545b6e7,src-3541173bf6843b,principal,0,\N,https://geo.infrasa.gov.br/server/rest/services/Hidrovias/MapServer
 url-d7a84a12ee0e94,src-96c13c45079203,principal,0,\N,https://aeronaves.anac.gov.br/aeronaves/
 url-d7b0e7977ca963,src-6af85b5083c90c,principal,0,\N,https://diariooficial.saoluis.ma.gov.br/
@@ -4241,6 +4311,7 @@ url-db2f2a83de25b9,src-18a5048070883f,principal,0,\N,https://github.com/GeiserX/
 url-db34f1e74187d8,src-2e22e79fcac5f4,principal,0,\N,https://consultanumero.abrtelecom.com.br/consultanumero/consulta/consultaSituacaoAtualCtg
 url-db495e15ea4639,src-94ad6248ad3a6a,principal,0,\N,https://www.camaramanacapuru.am.gov.br/api/documentation
 url-db7c24b90fcef6,src-15a00c8c3a7717,principal,0,\N,https://www.gov.br/conecta/catalogo/apis/sipra-reforma-agraria
+url-db8ca53e330a75,src-b7399ba67eeb28,relacionada,0,Portal institucional da ANP,https://www.gov.br/anp/
 url-db9307ca9b776a,src-d71be1221aa393,principal,0,\N,https://www.osinttechniques.com/blog
 url-db9a945ad8ab4a,src-b57185b166aa48,principal,0,\N,https://www.bing.com/search?q=site%3ASEU_DOMINIO+contains%3Apdf
 url-db9da635d920f2,src-404fd9158f0177,principal,0,\N,https://www.gov.br/conecta/catalogo/apis/consulta-cnpj
@@ -4378,6 +4449,7 @@ url-e1f40f073f5bbb,src-9f3659c91827d9,principal,0,\N,https://www.cnpj.ws/pt-BR
 url-e1fb8a5e925bb9,src-16c8478f309b29,principal,0,\N,https://www.ibge.gov.br/estatisticas/multidominio/genero/17270-pnad-continua.html
 url-e209e59d243049,src-c7d425ad5bdfb5,principal,0,\N,https://dadosabertos.rj.gov.br/api/3
 url-e2105475bbef3b,src-e18d5c66b6ad8e,principal,0,\N,https://find-and-update.company-information.service.gov.uk/
+url-e21d5390bc24d0,src-50f5ed4d61553c,principal,0,\N,https://p3m.sgb.gov.br/
 url-e231badedf33eb,src-6bc1e62e341205,principal,0,\N,http://www.telemidia.puc-rio.br/~rafaeldiniz/public_files/normas/SBTVD/pt_BR/OTA/Especificac%CC%A7a%CC%83o%20da%20REST%20API%20do%20Portal%20Ginga_v1.1.pdf
 url-e2333a9cf63152,src-288ffdcd6a1e9d,principal,0,\N,https://www.ficoupequeno.com/
 url-e23d423f5b672e,src-ca9131e2513486,principal,0,\N,https://www.researcherid.com
@@ -4412,6 +4484,7 @@ url-e39c5929d50c2b,src-70dc2824ac3083,principal,0,\N,https://tiktok.einzzcookie.
 url-e3abb50715ccff,src-c7f5bd11685b46,principal,0,\N,https://www.tjro.jus.br/
 url-e3b3845d9c2f84,src-f8eff6fbe2ae05,principal,0,\N,https://www12.senado.leg.br/dados-abertos/legislativo/legislacao/acervo-do-portal-lexml
 url-e3c42f9b574d8f,src-33b0427b5a319f,principal,0,\N,https://www.ssp.ma.gov.br/disque-denuncia/desaparecidos/
+url-e3cd9df06a8fbf,src-6f0db97cd54fac,principal,0,\N,https://docs.quantilica.com/fontes/bcb/bcb-microdados-fetcher/
 url-e3e36e0ceba18b,src-9264c432f2b72f,principal,0,\N,https://www2.cnmp.mp.br/portaldatransparencia/contracheque/remuneracao-de-todos-os-servidores-ativos
 url-e3f4fd12925b23,src-d9edad6458fbc0,principal,0,\N,https://docs.ckan.org/en/2.10/api/
 url-e4002e96d21cfe,src-72ed0bbd7c0c5a,principal,0,\N,https://developer.mozilla.org/en-US/observatory
@@ -4421,6 +4494,7 @@ url-e414149c9a031b,src-e1c9a74ce6f2f2,principal,0,\N,https://processo.stj.jus.br
 url-e41ffa89284e8c,src-0808693dd2eff2,principal,0,\N,https://diariooficial.ro.gov.br/
 url-e42226ece6e84d,src-7a97bdeeb48bef,principal,0,\N,https://www.mprn.mp.br/
 url-e42a765389baa8,src-4149057e1b5111,principal,0,\N,https://www.fish4.co.uk
+url-e43c6fca06ce3e,src-63683d072ab2a0,principal,0,\N,https://docs.quantilica.com/fontes/transportes/antt-fetcher/
 url-e441a5aeba14df,src-f1fa8e7de3325a,principal,0,\N,https://portaldatransparencia.gov.br/sancoes
 url-e4433b5c7aaa26,src-e2e06853c9b227,principal,0,\N,https://www.gov.br/pt-br/servicos/cadastrar-grupos-de-pesquisa-na-plataforma-lattes
 url-e449a5e6326e1c,src-ac5f75e826a552,principal,0,\N,https://bemtevi.segurancapublica.sc.gov.br:10346/Interface/Cameras/GetJPEGStream?Camera=FNS_CEN_160&width=1920&height=1080
@@ -4491,6 +4565,7 @@ url-e804b0de1c8739,src-f0bea878910f5e,principal,0,\N,https://notadomilhao.sf.pre
 url-e80b9a7698feea,src-842b62b138a2d2,principal,0,\N,https://Ivpaste.com
 url-e80ef6baef5483,src-afbd40141f54f0,principal,0,\N,https://odcrawler.xyz/
 url-e8136278b497cf,src-2dd8eae99fcd8a,principal,0,\N,https://discricionarias.transferegov.sistema.gov.br/voluntarias/Principal/Principal.do?Usr=guest&Pwd=guest
+url-e81a6538c4ef2a,src-4f5c489e0eb17a,principal,0,\N,https://dadosabertos.pgfn.gov.br/2026_trimestre_03/Dados_abertos_Previdenciario.zip
 url-e82f0f97c37403,src-5b80921d413c6c,principal,0,\N,https://transparencia.caxias.ma.gov.br/transparencia/dados-abertos
 url-e85c83a9ab2241,src-fc0a619ce17080,principal,0,\N,https://rotacomando.com.br/
 url-e873a4140532f0,src-f1472c38f2c1e3,principal,0,\N,https://bdan.an.gov.br/home
@@ -4529,11 +4604,13 @@ url-ea2c5150502596,src-2637a86671a086,principal,0,\N,https://www.mpsc.mp.br/
 url-ea2dd8d2913491,src-12b455526e050d,principal,0,\N,https://www.terraclass.gov.br/o-projeto
 url-ea41e77c778f01,src-07f53a6866d66c,principal,0,\N,https://www.dados.ms.gov.br/api/3/action/help_show?name=datastore_search
 url-ea4550c6555d60,src-65e503ea231a76,principal,0,\N,https://app.tjpb.jus.br/certo/paginas/publico/solicitarCertidao.jsf
+url-ea47727076e215,src-e3f947b3d66f09,principal,0,\N,https://dados.cnpjaberto.com.br
 url-ea5b20a968e9e0,src-871c406838d44d,principal,0,\N,https://www.dieese.org.br/
 url-ea5bd624fb942e,src-715d5ba7d2f46c,principal,0,\N,https://www.valortabelafipe.com.br
 url-ea5d793946fce4,src-b3ad80456a2139,principal,0,\N,https://certidoes.trf2.jus.br/certidoes/
 url-ea6526622f115b,src-271e6675b01771,principal,0,\N,https://onsc.senamhi.gob.bo/public/public-geoanalisys
 url-ea6d3d1f2c732c,src-2b9f4ba05da667,principal,0,\N,https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/inep-data/consulta-matricula
+url-ea79b5bf358a80,src-1c9a439ec1f34c,principal,0,\N,https://www.sgb.gov.br/modelagem3d
 url-ea8d3ca3fd97d7,src-6060575bc04fba,principal,0,\N,https://recruitin.net/
 url-ea913dc45fb07f,src-87364c177cf039,principal,0,\N,https://greyguide.isti.cnr.it
 url-ea95eb996203d4,src-23d493651e5466,principal,0,\N,https://sec.tjmt.jus.br/emitir-certidao-de-primeiro-grau?opcaoCertidao=1
@@ -4646,6 +4723,9 @@ url-efda560c35aee0,src-01106ed0bbafb1,principal,0,\N,https://www.epe.gov.br/pt
 url-efdb7c56782790,src-5e9db735e0bd19,principal,0,\N,https://www.senamhi.gob.pe/index.php?p=descarga-datos-hidrometeorologicos
 url-efef6b8489b332,src-b56ec39040a425,principal,0,\N,https://www.tse.jus.br/servicos-eleitorais/autoatendimento-eleitoral#/debitos/listar
 url-effa5f24fb8987,src-3817d14525377d,principal,0,\N,https://www12.senado.leg.br/interlegis/orgaosatendidos?uf=RO
+url-eox-s2cloudless-faq,src-eox-s2cloudless-2016,relacionada,1,Licença e atribuição,https://cloudless.eox.at/documentation/faq
+url-eox-s2cloudless-home,src-eox-s2cloudless-2016,principal,0,EOxCloudless,https://cloudless.eox.at/
+url-eox-s2cloudless-usage,src-eox-s2cloudless-2016,relacionada,2,Uso do serviço WMTS,https://cloudless.eox.at/documentation/usage
 url-f0196223429de5,src-1a89aac4eb25a5,principal,0,\N,https://daer.kopp.com.br/ftp/imagem.php?id=Venancio_Aires
 url-f023697e98ed06,src-f80d620056c716,principal,0,\N,https://sapl.jaru.ro.leg.br/
 url-f02517f3117b70,src-0a068e77815029,principal,0,\N,https://www.conivales.se.gov.br/dados-abertos
@@ -4726,6 +4806,7 @@ url-f47887f8392a9e,src-c8fa593a0b3320,principal,0,\N,https://dataspace.copernicu
 url-f483d46670270e,src-c7162e4d440802,principal,0,\N,https://www.goodsearch.com
 url-f48f90305001b7,src-8839e5229cbefe,principal,0,\N,https://www.pesquisaprotesto.com.br/
 url-f4af1acaae3d92,src-7b16176d2dd7ab,principal,0,\N,http://sigma-soschuva.cptec.inpe.br/
+url-f4b61737c25ce5,src-b6aeecc95003a2,principal,0,\N,https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/microdados/enade-das-licenciaturas
 url-f4c64313b69e29,src-d4e5c0039fb6aa,principal,0,\N,https://www.tce.to.gov.br/
 url-f4ca5d9cee0047,src-7778c12cf642d0,principal,0,\N,https://docs.portosempapel.gov.br/webservices/
 url-f4d0ec67fb2eac,src-800c21f8260f48,principal,0,\N,https://www.google.com/search?q=%22SEU_ALVO%22+%22extrato+de+contrato%22+%7C+%22termo+aditivo%22+%7C+%22ata+de+registro+de+pre%C3%A7os%22
@@ -4906,6 +4987,7 @@ url-fd20e7a29ef779,src-4d0edf5d802e8c,principal,0,\N,https://transparencia.agili
 url-fd28fc37cc3b93,src-dfcd8e1db6818d,principal,0,\N,https://www.gov.br/censipam/pt-br/atuacao/copy_of_infraestrutura-tecnologica
 url-fd2bd9a66083e8,src-99e5e2dde76454,principal,0,\N,https://www.diariooficial.ce.gov.br/
 url-fd327e21d1f7aa,src-0cd9ac24f00e13,principal,0,\N,https://api-reservadeespaco.curitiba.pr.gov.br/index.html
+url-fd34e989fcab87,src-b7b1a5f0453959,principal,0,\N,https://geoportal.sgb.gov.br/desastres/
 url-fd3ecf18527ef5,src-ebfc9fb5e242b9,principal,0,\N,https://certidoes.trf5.jus.br/certidoes2022/
 url-fd8d4859387cdc,src-1f0d8d66fcdbfe,principal,0,\N,https://www.ibge.gov.br/acesso-informacao/institucional/documentos-ibge/1861-novo-portal/institucional/17422-servidores.html
 url-fd90e7ad45819e,src-10d16a4f75e8a5,principal,0,\N,https://www.gov.br/mcti/pt-br/acompanhe-o-mcti/indicadores
@@ -4939,6 +5021,7 @@ url-febccbf13a98bb,src-69dfc161daba64,principal,0,\N,https://pje.tjap.jus.br/1g/
 url-fed90558c83f4c,src-f98d3e40c7e79b,principal,0,\N,https://www.mapchannels.com/dualmaps7/map.htm
 url-fedb9ef7d6209c,src-93d3c6ee1a9887,principal,0,\N,https://www.gov.br/antaq/pt-br/acesso-a-informacao/dados-abertos
 url-fedf58143372a6,src-791012bfa5e91a,principal,0,\N,https://bit.ly/bcattools
+url-fee10e50bcdc01,src-9d884422a2ca5a,principal,0,\N,https://apipj.com.br
 url-ff083caadc4832,src-19c366799a7942,principal,0,\N,https://sei.ancine.gov.br/sei/modulos/pesquisa/md_pesq_processo_pesquisar.php?acao_externa=protocolo_pesquisar&acao_origem_externa=protocolo_pesquisar&id_orgao_acesso_externo=0
 url-ff0a718d7b114d,src-c601c22413fd03,principal,0,\N,https://transparencia.pimentabueno.ro.gov.br/novo
 url-ff153fd58d1283,src-72e5556427bbc2,principal,0,\N,https://isc.sans.edu/rssfeed_full.xml

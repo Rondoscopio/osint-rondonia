@@ -1,0 +1,5 @@
+<script lang="ts">
+  import PageMeta from '$lib/components/ui/PageMeta.svelte';
+</script>
+
+<PageMeta title="Componente de teste" />

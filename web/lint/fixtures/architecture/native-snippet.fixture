@@ -1,0 +1,4 @@
+{#snippet content()}
+  <p>Marcação em snippet</p>
+{/snippet}
+{@render content()}
