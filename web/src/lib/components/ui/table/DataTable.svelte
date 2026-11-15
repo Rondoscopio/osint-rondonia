@@ -592,10 +592,10 @@
   }
   thead :global(input.table-filter-input) {
     box-sizing: border-box;
-    margin-top: 0.24rem;
+    margin-top: 0.35rem;
     width: 100%;
     min-width: 0;
-    min-height: 1.75rem;
+    min-height: 2rem;
     padding: 0.18rem 0.28rem;
     border: 1px solid var(--border);
     border-radius: var(--control-radius);

@@ -69,20 +69,30 @@ for (const viewport of [
     );
     await expect(page.getByRole('dialog')).toHaveCount(0);
     const mapBox = (await map.boundingBox())!;
-    const footerBox = (await footer.boundingBox())!;
     const mainBox = (await page.getByRole('main').boundingBox())!;
+    const mapSection = (await page.locator('.explorer-map').boundingBox())!;
+    const resultsSection = (await page
+      .locator('.explorer-main')
+      .boundingBox())!;
     expect(mainBox.width).toBeGreaterThan(viewport.width * 0.8);
     expect(mapBox.width).toBeGreaterThan(viewport.width * 0.3);
-    expect(footerBox.width).toBe(viewport.width);
-    expect(footerBox.y).toBeGreaterThanOrEqual(mainBox.y + mainBox.height - 1);
+    expect(resultsSection.y).toBeGreaterThanOrEqual(
+      mapSection.y + mapSection.height,
+    );
     if (viewport.width > 760) {
+      await page
+        .getByRole('button', { name: 'Próximo' })
+        .scrollIntoViewIfNeeded();
       await expect(
         page.getByRole('button', { name: 'Próximo' }),
       ).toBeInViewport();
-      expect(footerBox.y + footerBox.height).toBeLessThanOrEqual(
-        viewport.height,
-      );
     }
+    const footerBox = (await footer.boundingBox())!;
+    const finalMainBox = (await page.getByRole('main').boundingBox())!;
+    expect(footerBox.width).toBe(viewport.width);
+    expect(footerBox.y).toBeGreaterThanOrEqual(
+      finalMainBox.y + finalMainBox.height - 1,
+    );
     expect(
       await page.evaluate(() => document.documentElement.scrollWidth),
     ).toBe(viewport.width);

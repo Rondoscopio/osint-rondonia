@@ -584,26 +584,6 @@ li {
 .main-area:has(.explorer) {
   width: 100%;
 }
-@media (min-width: 761px) and (min-height: 700px) {
-  body:has(.explorer) {
-    display: flex;
-    flex-direction: column;
-    height: 100dvh;
-  }
-  body:has(.explorer) .site-header {
-    flex: none;
-  }
-  .site-body:has(.explorer) {
-    flex: 1;
-    min-height: 0;
-    grid-template-rows: minmax(0, 1fr) auto;
-  }
-  .main-area:has(.explorer) {
-    display: flex;
-    flex-direction: column;
-    min-height: 0;
-  }
-}
 .site-footer {
   display: flex;
   flex-wrap: wrap;
@@ -1000,18 +980,19 @@ textarea:focus-visible {
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-.multi-choice-control :global(input.multi-choice-input) {
+.multi-choice-control input.multi-choice-input {
   flex: 1 1 5rem;
   width: 5rem;
-  min-height: 2rem;
-  padding: 0.3rem;
+  min-height: 0;
+  padding: 0.18rem 0.28rem;
   border: 0;
   border-radius: 0;
   background: transparent;
 }
-.multi-choice-control :global(input.multi-choice-input):focus-visible {
+.multi-choice-control input.multi-choice-input:focus-visible {
   border-color: transparent;
   box-shadow: none;
+  outline: none;
 }
 .multi-choice-trigger,
 .multi-choice-clear {
@@ -1053,9 +1034,13 @@ thead .multi-choice-control {
   min-height: 2rem;
   margin-top: 0.35rem;
 }
-thead .multi-choice-control :global(input.multi-choice-input) {
+thead .multi-choice-trigger,
+thead .multi-choice-clear {
+  height: 1.75rem;
+}
+thead .multi-choice-control input.multi-choice-input {
   min-width: 2.5rem;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
 }
 @media (prefers-reduced-motion: reduce) {
   .combo-input .combo-trigger svg,

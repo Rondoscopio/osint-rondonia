@@ -992,49 +992,52 @@
           {/if}
         </div>
       {/if}
-      <Button.Root
-        class="button"
-        type="button"
-        onclick={() =>
-          setProjection(projection === 'mercator' ? 'globe' : 'mercator')}
-      >
-        {projection === 'mercator' ? 'Ver globo' : 'Ver mapa 2D'}
-      </Button.Root>
-      <Button.Root class="button" type="button" onclick={goToBrazil}>
-        Ir ao Brasil
-      </Button.Root>
-      <span class="map-zoom-controls">
+      <div class="map-camera-controls">
         <Button.Root
           class="button"
           type="button"
-          aria-label="Aumentar zoom"
-          onclick={() => map?.zoomIn()}
+          onclick={() =>
+            setProjection(projection === 'mercator' ? 'globe' : 'mercator')}
         >
-          +
+          {projection === 'mercator' ? 'Ver globo' : 'Ver mapa 2D'}
         </Button.Root>
-        <Button.Root
-          class="button"
-          type="button"
-          aria-label="Diminuir zoom"
-          onclick={() => map?.zoomOut()}
-        >
-          −
+        <Button.Root class="button" type="button" onclick={goToBrazil}>
+          Ir ao Brasil
         </Button.Root>
-      </span>
+        <span class="map-zoom-controls">
+          <Button.Root
+            class="button"
+            type="button"
+            aria-label="Aumentar zoom"
+            onclick={() => map?.zoomIn()}
+          >
+            +
+          </Button.Root>
+          <Button.Root
+            class="button"
+            type="button"
+            aria-label="Diminuir zoom"
+            onclick={() => map?.zoomOut()}
+          >
+            −
+          </Button.Root>
+        </span>
+      </div>
     </div>
   {/snippet}
 
-  <div
-    bind:this={mapElement}
-    class="world-map"
-    class:globe-projection={projection === 'globe'}
-    aria-label="Mapa interativo mundial de países e regiões administrativas"
-    aria-busy={!mapLoaded || !worldReady}
-  >
-    <!-- MapLibre initializes the map in this element. -->
+  <div class="map-stage">
+    <div
+      bind:this={mapElement}
+      class="world-map"
+      class:globe-projection={projection === 'globe'}
+      aria-label="Mapa interativo mundial de países e regiões administrativas"
+      aria-busy={!mapLoaded || !worldReady}
+    >
+      <!-- MapLibre initializes the map in this element. -->
+    </div>
+    {@render mapToolbar()}
   </div>
-
-  {@render mapToolbar()}
 
   {#if stateOptions.length}
     <div class="map-territory-controls">
@@ -1245,20 +1248,34 @@
     font-size: 1.35rem;
   }
   .map-heading p {
-    margin-bottom: 0.55rem;
+    margin-bottom: 0.45rem;
+  }
+  .map-stage {
+    position: relative;
+    min-width: 0;
   }
   .map-toolbar {
     display: flex;
-    margin-block: 0.55rem;
-    gap: 0.4rem;
+    position: absolute;
+    z-index: 4;
+    inset: auto 0.65rem 0.65rem;
+    gap: 0.35rem;
     align-items: end;
     flex-wrap: wrap;
+    margin: 0;
+    padding: 0.4rem;
+    border: 1px solid var(--border);
+    border-radius: 0.65rem;
+    background: color-mix(in srgb, var(--surface) 92%, transparent);
+    box-shadow: 0 0.25rem 1rem #0002;
+    backdrop-filter: blur(0.55rem);
   }
   .map-modes {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 0.35rem;
-    flex: 1 0 100%;
+    flex: 0 1 auto;
+    width: min(22rem, 100%);
     border: 0;
     padding: 0;
     margin: 0;
@@ -1273,6 +1290,7 @@
   }
   .map-toolbar :global(.button) {
     padding-inline: 0.55rem;
+    white-space: nowrap;
   }
   .map-modes :global(.button[aria-pressed='true']) {
     color: var(--brand);
@@ -1283,17 +1301,29 @@
     display: inline-flex;
     gap: 0.25rem;
   }
+  .map-camera-controls {
+    display: flex;
+    gap: 0.3rem;
+    align-items: center;
+  }
   .map-source-control {
     display: grid;
-    min-width: min(18rem, 100%);
+    width: 14rem;
+    min-width: min(12rem, 100%);
     gap: 0.25rem;
     color: var(--muted);
     font-size: 0.8rem;
   }
   .map-territory-controls {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(9rem, 100%), 1fr));
+    display: flex;
+    align-items: end;
+    flex-wrap: wrap;
     gap: 0.4rem;
+    margin-top: 0.45rem;
+  }
+  .map-territory-controls :global(.ui-select-field) {
+    flex: 0 1 18rem;
+    max-width: 22rem;
   }
   .map-source-status {
     display: grid;
@@ -1320,7 +1350,7 @@
   }
   .world-map {
     width: 100%;
-    height: clamp(14rem, 39dvh, 26rem);
+    height: clamp(12rem, 28dvh, 19rem);
     overflow: hidden;
     border: 1px solid var(--border);
     border-radius: 0.9rem;
@@ -1346,7 +1376,7 @@
     align-items: center;
     flex-wrap: wrap;
     gap: 0.35rem 0.8rem;
-    margin-top: 0.7rem;
+    margin-top: 0.4rem;
   }
   .map-legend {
     display: inline-flex;
@@ -1363,7 +1393,8 @@
     background: #287246;
   }
   .map-attribution {
-    margin: 0.65rem 0 0;
+    margin: 0.4rem 0 0;
+    font-size: 0.78rem;
   }
   .map-fallback {
     display: flex;
@@ -1379,6 +1410,20 @@
   @media (max-width: 760px) {
     .world-map {
       height: clamp(12rem, 30dvh, 19rem);
+    }
+    .map-toolbar {
+      position: static;
+      margin-top: -0.45rem;
+      border-radius: 0 0 0.65rem 0.65rem;
+      box-shadow: none;
+      backdrop-filter: none;
+    }
+    .map-modes {
+      width: 100%;
+    }
+    .map-camera-controls {
+      flex: 1 1 auto;
+      justify-content: flex-end;
     }
   }
 </style>

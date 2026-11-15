@@ -42,13 +42,32 @@ export type StateCoverage = Item & {
   total: number;
 };
 export type Source = Item & {
+  id_externo?: string | null;
   natureza: 'fonte' | 'ferramenta';
   descricao: string | null;
+  nota?: string | null;
+  observacao?: string | null;
+  observacoes?: string | null;
+  esfera?: string | null;
+  tecnologia?: string | null;
+  acesso_declarado?: string | null;
+  data_referencia?: string | null;
+  referencia_institucional?: string | null;
+  repositorio_oficial?: string | null;
+  licenca_spdx?: string | null;
+  situacao_url?: string | null;
   tipo: string | null;
   status_triagem: string | null;
+  status_validacao?: string | null;
+  cobertura_texto?: string | null;
+  localidade_texto?: string | null;
   categorias_texto?: string | null;
+  categorias_classificadas_texto?: string | null;
   portais_texto?: string | null;
+  portais_papeis_texto?: string | null;
   urls?: number;
+  urls_texto?: string | null;
+  proveniencia_texto?: string | null;
 };
 export type CatalogSatelliteLayer = {
   id: string;
