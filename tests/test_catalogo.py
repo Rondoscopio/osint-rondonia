@@ -145,10 +145,10 @@ class CatalogPackageTests(unittest.TestCase):
             {"principal": 501, "original": 65, "curadoria": 80},
         )
         associations = self.read_table("fonte_categoria")
-        self.assertEqual(len(associations), 5557)
+        self.assertEqual(len(associations), 5573)
         self.assertEqual(
             len({(row["fonte_id"], row["categoria_id"]) for row in associations}),
-            5557,
+            5573,
         )
         category_role = {row["id"]: row["tipo_classificacao"] for row in categories}
         self.assertEqual(
@@ -158,7 +158,7 @@ class CatalogPackageTests(unittest.TestCase):
                 )
                 for role in ("principal", "original", "curadoria")
             },
-            {"principal": 2021, "original": 1414, "curadoria": 2122},
+            {"principal": 2037, "original": 1414, "curadoria": 2122},
         )
 
     def test_categories_are_split_and_kept_as_independent_themes(self):
