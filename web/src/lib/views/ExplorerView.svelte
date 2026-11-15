@@ -104,6 +104,24 @@
         }
       : null,
   );
+  const selectedScope = $derived.by(() => {
+    if (!selected) return '';
+    const selectedState = stateOptions.find((item) => item.id === selected.uf);
+    if (selected.municipio) {
+      const selectedCity = vm.options.data?.municipios.find(
+        (item) => item.id === selected.municipio,
+      );
+      const municipality = selectedCity?.nome ?? selected.name;
+      const stateLabel = selectedState ? ` / ${selectedState.sigla}` : '';
+      return `Território: ${municipality}${stateLabel} · Brasil · filtro aplicado`;
+    }
+    if (selected.uf)
+      return `Território: ${selectedState?.nome ?? selected.name} · Brasil · filtro aplicado`;
+    const status = selected.supported
+      ? 'filtro aplicado'
+      : 'mapa focado; sem filtro de cobertura correspondente';
+    return `Território: ${selected.name} · ${status}`;
+  });
 
   function navigate(
     changes: Record<string, string | string[] | null>,
@@ -142,9 +160,10 @@
 <ExplorerScreen
   totals={vm.results.data?.totals}
   scope={selected
-    ? selected.name + (selected.supported ? '' : ' · sem filtro territorial')
+    ? selectedScope
     : (recut?.title ??
       (portalId ? 'Fichas do portal selecionado' : 'Catálogo completo'))}
+  territoryActive={Boolean(selected)}
   {nature}
   {query}
   onSearch={(q) => navigate({ q })}

@@ -45,9 +45,56 @@ import { fold } from '../../../shared/text.ts';
 
 type TableField = { sql: string; numeric?: boolean; filter?: boolean };
 
+function territoryLabelSql(papel: 'cobertura' | 'localidade_declarada') {
+  return `(SELECT group_concat(item, ', ') FROM (
+    SELECT item, nivel, chave FROM (
+      SELECT 'Global' item, 0 nivel, '' chave
+      WHERE EXISTS (
+        SELECT 1 FROM fonte_abrangencia fa JOIN abrangencia a ON a.id = fa.abrangencia_id
+        WHERE fa.fonte_id = f.id AND fa.papel = '${papel}' AND a.internacional = 1
+      )
+      UNION ALL
+      SELECT 'País', 1, ''
+      WHERE EXISTS (
+        SELECT 1 FROM fonte_abrangencia fa JOIN abrangencia a ON a.id = fa.abrangencia_id
+        WHERE fa.fonte_id = f.id AND fa.papel = '${papel}' AND a.nacional = 1
+      )
+      UNION
+      SELECT u.nome, 2, label_key(u.nome)
+      FROM fonte_abrangencia fa
+      JOIN abrangencia_uf au ON au.abrangencia_id = fa.abrangencia_id
+      JOIN uf u ON u.codigo_ibge = au.uf_codigo_ibge
+      WHERE fa.fonte_id = f.id AND fa.papel = '${papel}'
+      UNION
+      SELECT m.nome || '/' || u.sigla, 3, label_key(m.nome) || u.sigla
+      FROM fonte_abrangencia fa
+      JOIN abrangencia_municipio am ON am.abrangencia_id = fa.abrangencia_id
+      JOIN municipio m ON m.codigo_ibge = am.municipio_codigo_ibge
+      JOIN uf u ON u.codigo_ibge = m.uf_codigo_ibge
+      WHERE fa.fonte_id = f.id AND fa.papel = '${papel}'
+    )
+    ORDER BY nivel, chave, item
+  ))`;
+}
+
 const sourceFields = {
+  id: { sql: 'f.id' },
+  id_externo: { sql: 'f.id_externo' },
   nome: { sql: 'f.nome' },
   descricao: { sql: 'f.descricao' },
+  nota: { sql: 'f.nota' },
+  observacao: { sql: 'f.observacao' },
+  observacoes: { sql: 'f.observacoes' },
+  esfera: { sql: 'f.esfera' },
+  tecnologia: { sql: 'f.tecnologia' },
+  acesso_declarado: { sql: 'f.acesso_declarado' },
+  data_referencia: { sql: 'f.data_referencia' },
+  referencia_institucional: { sql: 'f.referencia_institucional' },
+  repositorio_oficial: { sql: 'f.repositorio_oficial' },
+  licenca_spdx: { sql: 'f.licenca_spdx' },
+  situacao_url: { sql: 'f.situacao_url' },
+  natureza: { sql: 'f.natureza' },
+  validacao: { sql: 'sv.valor_original' },
   tipo: { sql: 't.nome', filter: false },
   categoria: {
     sql: `(SELECT group_concat(nome, ' · ') FROM (
@@ -62,6 +109,42 @@ const sourceFields = {
       WHERE fp.fonte_id = f.id ORDER BY label_key(p.nome), p.id
     ))`,
     filter: true,
+  },
+  categorias_classificadas: {
+    sql: `(SELECT group_concat(item, ' · ') FROM (
+      SELECT c.nome || ' (' || c.tipo_classificacao || ')' item
+      FROM fonte_categoria fc JOIN categoria c ON c.id = fc.categoria_id
+      WHERE fc.fonte_id = f.id
+      ORDER BY label_key(c.nome), c.tipo_classificacao, c.id
+    ))`,
+  },
+  portais_papeis: {
+    sql: `(SELECT group_concat(item, ' · ') FROM (
+      SELECT p.nome || ' (' || fp.papel || ')' item
+      FROM fonte_portal fp JOIN portal p ON p.id = fp.portal_id
+      WHERE fp.fonte_id = f.id
+      ORDER BY label_key(p.nome), fp.papel, p.id
+    ))`,
+  },
+  cobertura: { sql: territoryLabelSql('cobertura') },
+  localidade: { sql: territoryLabelSql('localidade_declarada') },
+  proveniencia: {
+    sql: `(SELECT group_concat(item, ' · ') FROM (
+      SELECT fo.tipo_origem || ': ' || o.valor_original ||
+             CASE WHEN fr.id IS NULL THEN '' ELSE ' → ' || fr.nome END item
+      FROM fonte_origem fo JOIN origem o ON o.id = fo.origem_id
+      LEFT JOIN fonte fr ON fr.id = o.fonte_referenciada_id
+      WHERE fo.fonte_id = f.id
+      ORDER BY fo.tipo_origem, label_key(o.valor_original), o.id
+    ))`,
+  },
+  urls_texto: {
+    sql: `(SELECT group_concat(item, ' · ') FROM (
+      SELECT CASE WHEN fu.nome IS NULL OR fu.nome = '' THEN fu.url
+                  ELSE fu.nome || ': ' || fu.url END item
+      FROM fonte_url fu WHERE fu.fonte_id = f.id
+      ORDER BY fu.ordem, fu.id
+    ))`,
   },
   urls: {
     sql: '(SELECT COUNT(*) FROM fonte_url fu WHERE fu.fonte_id = f.id)',
@@ -1106,11 +1189,21 @@ export function openCatalog(db: Database) {
       `fold(f.nome) ${filters.ordem === 'desc' ? 'DESC' : 'ASC'}`,
     );
     const items = rows<Source>(
-      `SELECT f.id, f.nome, f.descricao, f.status_triagem, f.natureza, t.nome tipo,
+      `SELECT f.*, t.nome tipo,
           ${sourceFields.categoria.sql} categorias_texto,
           ${sourceFields.portais.sql} portais_texto,
-          ${sourceFields.urls.sql} urls
-        FROM fonte f LEFT JOIN tipo t ON t.id = f.tipo_id ${where}
+          ${sourceFields.categorias_classificadas.sql} categorias_classificadas_texto,
+          ${sourceFields.portais_papeis.sql} portais_papeis_texto,
+          ${sourceFields.cobertura.sql} cobertura_texto,
+          ${sourceFields.localidade.sql} localidade_texto,
+          ${sourceFields.proveniencia.sql} proveniencia_texto,
+          ${sourceFields.urls_texto.sql} urls_texto,
+          ${sourceFields.urls.sql} urls,
+          sv.valor_original status_validacao
+        FROM fonte f
+        LEFT JOIN tipo t ON t.id = f.tipo_id
+        LEFT JOIN status_validacao sv ON sv.id = f.status_validacao_id
+        ${where}
         ORDER BY ${order}
         LIMIT ? OFFSET ?`,
       [...params, PAGE_SIZE, (page - 1) * PAGE_SIZE],

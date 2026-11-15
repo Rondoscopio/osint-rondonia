@@ -13,6 +13,7 @@
     totals,
     scope,
     nature,
+    territoryActive = false,
     query,
     onSearch,
     onNature,
@@ -23,6 +24,7 @@
     totals?: SearchResult['totals'];
     scope: string;
     nature: RecutAudience;
+    territoryActive?: boolean;
     query: string;
     onSearch: (query: string) => void;
     onNature: (nature: RecutAudience) => void;
@@ -51,11 +53,17 @@
 <svelte:window onkeydown={focusSearch} />
 
 <div class="explorer">
+  <div class="explorer-map">
+    {@render map()}
+  </div>
+
   <div class="explorer-main">
     <header class="explorer-heading">
       <div>
         <h1>Explorar o catálogo</h1>
-        <p aria-live="polite">{scope}</p>
+        <p class:territory-active={territoryActive} aria-live="polite">
+          {scope}
+        </p>
       </div>
       {#if reset}
         <Button.Root class="button" type="button" onclick={reset}>
@@ -63,23 +71,6 @@
         </Button.Root>
       {/if}
     </header>
-
-    <dl class="explorer-counts" aria-label="Contadores dos resultados">
-      <div>
-        <dt>Fichas</dt>
-        <dd>
-          {totals ? number.format(totals.fonte + totals.ferramenta) : '—'}
-        </dd>
-      </div>
-      <div>
-        <dt>Fontes</dt>
-        <dd>{totals ? number.format(totals.fonte) : '—'}</dd>
-      </div>
-      <div>
-        <dt>Ferramentas</dt>
-        <dd>{totals ? number.format(totals.ferramenta) : '—'}</dd>
-      </div>
-    </dl>
 
     <form
       class="explorer-search"
@@ -113,31 +104,37 @@
       {/each}
     </div>
 
-    {@render results()}
-  </div>
+    <dl class="explorer-counts" aria-label="Contadores dos resultados">
+      <div>
+        <dt>Fichas</dt>
+        <dd>
+          {totals ? number.format(totals.fonte + totals.ferramenta) : '—'}
+        </dd>
+      </div>
+      <div>
+        <dt>Fontes</dt>
+        <dd>{totals ? number.format(totals.fonte) : '—'}</dd>
+      </div>
+      <div>
+        <dt>Ferramentas</dt>
+        <dd>{totals ? number.format(totals.ferramenta) : '—'}</dd>
+      </div>
+    </dl>
 
-  <div class="explorer-map">
-    {@render map()}
-    <a class="map-results-link" href="#resultados">Ver resultados ↓</a>
+    {@render results()}
   </div>
 </div>
 
 <style>
   .explorer {
     display: grid;
-    grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
-    grid-template-areas: 'map results';
-    align-items: start;
-    gap: clamp(0.6rem, 1.1vw, 1.25rem);
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.7rem;
   }
   .explorer-map {
-    grid-area: map;
     min-width: 0;
-    position: sticky;
-    top: 4.75rem;
   }
   .explorer-main {
-    grid-area: results;
     min-width: 0;
     display: grid;
     gap: 0.65rem;
@@ -164,6 +161,19 @@
     margin: 0;
     color: var(--muted);
   }
+  .explorer-heading p.territory-active {
+    display: inline-flex;
+    align-items: center;
+    min-height: 1.8rem;
+    margin-top: 0.25rem;
+    padding: 0.2rem 0.55rem;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    color: var(--brand);
+    background: var(--surface-alt);
+    font-size: 0.86rem;
+    font-weight: 650;
+  }
   .explorer-search :global(.field) {
     flex: 1;
     min-width: 0;
@@ -171,40 +181,8 @@
   .explorer-nature {
     flex-wrap: wrap;
   }
-  .map-results-link {
-    display: none;
-  }
   .explorer-main :global(.table-viewport) {
-    max-height: 55dvh;
-  }
-  @media (min-width: 761px) and (min-height: 700px) {
-    .explorer {
-      flex: 1;
-      min-height: 0;
-      align-items: stretch;
-    }
-    .explorer-map {
-      position: static;
-      overflow: auto;
-    }
-    .explorer-main {
-      grid-template-rows: repeat(4, auto) minmax(0, 1fr);
-      min-height: 0;
-    }
-    .explorer-main :global(#resultados),
-    .explorer-main :global(.data-table) {
-      display: flex;
-      flex-direction: column;
-      min-height: 0;
-    }
-    .explorer-main :global(.table-viewport) {
-      max-height: none;
-      flex: 1 1 auto;
-    }
-    .explorer-main :global(.pagination) {
-      flex: none;
-      margin-top: 0.5rem;
-    }
+    max-height: min(60dvh, 48rem);
   }
   .explorer-nature :global([aria-pressed='true']) {
     border-color: var(--brand);
@@ -232,18 +210,5 @@
     font-size: clamp(1.05rem, 2vw, 1.3rem);
     font-weight: 700;
     font-variant-numeric: tabular-nums;
-  }
-  @media (max-width: 760px) {
-    .explorer {
-      grid-template-columns: minmax(0, 1fr);
-      grid-template-areas: 'map' 'results';
-    }
-    .explorer-map {
-      position: static;
-    }
-    .map-results-link {
-      display: inline-block;
-      margin-top: 0.4rem;
-    }
   }
 </style>
