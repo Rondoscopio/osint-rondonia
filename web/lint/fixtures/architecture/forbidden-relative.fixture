@@ -1,0 +1,1 @@
+export { openCatalog } from '../features/catalog/adapters/sqlite-catalog';

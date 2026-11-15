@@ -20,13 +20,17 @@ from validate_package import NULL, validate  # noqa: E402
 class CatalogPackageTests(unittest.TestCase):
     def test_package_integrity(self):
         result = validate(ROOT)
+        descriptor = json.loads((ROOT / "datapackage.json").read_text())
         self.assertEqual(
             result["resources"],
-            len(json.loads((ROOT / "datapackage.json").read_text())["resources"]),
+            len(descriptor["resources"]),
         )
-        self.assertEqual(result["rows_fonte"], 4970)
-        self.assertEqual(result["rows"], 28074)
-        self.assertEqual(result["resources"], 16)
+        self.assertEqual(result["resources"], 17)
+        for resource in descriptor["resources"]:
+            self.assertEqual(
+                result[f"rows_{resource['name']}"],
+                len(self.read_table(resource["name"])),
+            )
         self.assertEqual(result["rows_uf"], 27)
         self.assertEqual(result["rows_municipio"], 5571)
         self.assertEqual(result["rows_abrangencia"], 94)
@@ -34,13 +38,11 @@ class CatalogPackageTests(unittest.TestCase):
         self.assertNotIn("rows_localidade", result)
         self.assertNotIn("rows_fonte_localidade", result)
         self.assertNotIn("rows_registro_original", result)
-        self.assertEqual(result["rows_categoria"], 646)
-        self.assertEqual(result["rows_fonte_categoria"], 5428)
-        self.assertEqual(result["rows_lista"], 19)
-        self.assertEqual(result["rows_lista_categoria"], 35)
-        self.assertEqual(result["rows_fonte_url"], 4964)
-        self.assertEqual(result["rows_origem"], 48)
-        self.assertEqual(result["rows_fonte_origem"], 3031)
+        resources = {item["name"] for item in descriptor["resources"]}
+        self.assertNotIn("lista", resources)
+        self.assertNotIn("lista_categoria", resources)
+        self.assertFalse((ROOT / "data" / "lista.csv").exists())
+        self.assertFalse((ROOT / "data" / "lista_categoria.csv").exists())
         self.assertNotIn("rows_item_todo", result)
         self.assertNotIn("rows_todo_url", result)
 
@@ -143,10 +145,10 @@ class CatalogPackageTests(unittest.TestCase):
             {"principal": 501, "original": 65, "curadoria": 80},
         )
         associations = self.read_table("fonte_categoria")
-        self.assertEqual(len(associations), 5428)
+        self.assertEqual(len(associations), 5557)
         self.assertEqual(
             len({(row["fonte_id"], row["categoria_id"]) for row in associations}),
-            5428,
+            5557,
         )
         category_role = {row["id"]: row["tipo_classificacao"] for row in categories}
         self.assertEqual(
@@ -156,31 +158,14 @@ class CatalogPackageTests(unittest.TestCase):
                 )
                 for role in ("principal", "original", "curadoria")
             },
-            {"principal": 1920, "original": 1414, "curadoria": 2094},
+            {"principal": 2021, "original": 1414, "curadoria": 2122},
         )
 
-    def test_categories_are_split_and_historical_lists_reference_themes(self):
+    def test_categories_are_split_and_kept_as_independent_themes(self):
         categories = {row["id"]: row["nome"] for row in self.read_table("categoria")}
         self.assertNotIn("cat-265cfc7cce07bd", categories)
         self.assertEqual(
             categories["cat-06bbe4bf665e47"], "Processo Eletrônico (PJe 1º e 2º Grau)"
-        )
-        lists = {row["id"]: row["nome"] for row in self.read_table("lista")}
-        self.assertEqual(len(lists), 19)
-        self.assertTrue(lists.keys().isdisjoint(categories))
-        astronomy = "cat-3c4f58baa45f43"
-        self.assertEqual(
-            lists[astronomy], "Astronomia, catálogos celestes e dados orbitais"
-        )
-        list_links = self.read_table("lista_categoria")
-        self.assertEqual(set(lists), {row["lista_id"] for row in list_links})
-        self.assertEqual(
-            {
-                categories[row["categoria_id"]]
-                for row in list_links
-                if row["lista_id"] == astronomy
-            },
-            {"Astronomia", "Catálogos celestes", "Dados orbitais"},
         )
         associations = self.read_table("fonte_categoria")
 
@@ -197,6 +182,55 @@ class CatalogPackageTests(unittest.TestCase):
         space_track = themes("src-14d8cce32ecb43")
         self.assertIn("Dados orbitais", space_track)
         self.assertNotIn("Catálogos celestes", space_track)
+
+    def test_lists_are_frontend_recuts_and_portals_form_a_tree(self):
+        descriptor = json.loads((ROOT / "datapackage.json").read_text())
+        resources = {item["name"] for item in descriptor["resources"]}
+        self.assertNotIn("lista", resources)
+        self.assertNotIn("lista_categoria", resources)
+        self.assertFalse((ROOT / "data" / "lista.csv").exists())
+        self.assertFalse((ROOT / "data" / "lista_categoria.csv").exists())
+
+        source_fields = {
+            field["name"]
+            for resource in descriptor["resources"]
+            if resource["name"] == "fonte"
+            for field in resource["schema"]["fields"]
+        }
+        self.assertNotIn("orgao_responsavel", source_fields)
+        self.assertNotIn("entidade_responsavel", source_fields)
+
+        portals = self.read_table("portal")
+        by_id = {row["id"]: row for row in portals}
+        self.assertEqual(len(portals), 3720)
+        self.assertEqual(sum(row["tipo"] == "grupo" for row in portals), 3)
+        self.assertEqual(sum(row["portal_pai_id"] != NULL for row in portals), 1371)
+        for portal in portals:
+            parent = portal["portal_pai_id"]
+            self.assertTrue(parent == NULL or parent in by_id)
+            seen = {portal["id"]}
+            while parent != NULL:
+                self.assertNotIn(parent, seen)
+                seen.add(parent)
+                parent = by_id[parent]["portal_pai_id"]
+
+        links = self.read_table("fonte_portal")
+        self.assertEqual(len(links), 6065)
+        self.assertEqual(
+            len({(row["fonte_id"], row["portal_id"], row["papel"]) for row in links}),
+            len(links),
+        )
+        self.assertEqual(
+            {
+                role: sum(row["papel"] == role for row in links)
+                for role in ("publicador", "orgao_responsavel", "entidade_responsavel")
+            },
+            {
+                "publicador": 5009,
+                "orgao_responsavel": 1024,
+                "entidade_responsavel": 32,
+            },
+        )
 
     def test_inventory_tables_are_removed_and_source_provenance_is_preserved(self):
         descriptor = json.loads((ROOT / "datapackage.json").read_text())
@@ -241,12 +275,14 @@ class CatalogPackageTests(unittest.TestCase):
             self.assertEqual(first.read_bytes(), second.read_bytes())
             with sqlite3.connect(first) as connection:
                 self.assertEqual(
-                    connection.execute("SELECT COUNT(*) FROM fonte").fetchone()[0], 4970
+                    connection.execute("SELECT COUNT(*) FROM fonte").fetchone()[0],
+                    first_counts["fonte"],
                 )
                 self.assertEqual(
                     connection.execute(
                         "SELECT name FROM sqlite_master WHERE type = 'table' "
-                        "AND (name GLOB 'inventario*' OR name = 'registro_original')"
+                        "AND (name GLOB 'inventario*' OR name IN "
+                        "('registro_original', 'lista', 'lista_categoria'))"
                     ).fetchall(),
                     [],
                 )
@@ -371,22 +407,13 @@ class CatalogPackageTests(unittest.TestCase):
             .split("```sql\n", 1)[1]
             .split("```", 1)[0]
         )
-        without_national = [
-            row[0]
-            for row in connection.execute(
-                sql, {"codigo_uf": "11", "incluir_nacional": 0}
-            )
+        filtered_sources = [
+            row[0] for row in connection.execute(sql, {"codigo_uf": "11"})
         ]
-        self.assertEqual(len(without_national), len(set(without_national)))
-        self.assertTrue({first, second, city_source}.issubset(without_national))
-        self.assertNotIn(national_source, without_national)
-        with_national = {
-            row[0]
-            for row in connection.execute(
-                sql, {"codigo_uf": "11", "incluir_nacional": 1}
-            )
-        }
-        self.assertIn(national_source, with_national)
+        self.assertEqual(len(filtered_sources), len(set(filtered_sources)))
+        self.assertTrue(
+            {first, second, national_source, city_source}.issubset(filtered_sources)
+        )
 
     def test_failed_sqlite_export_keeps_previous_file(self):
         with tempfile.TemporaryDirectory() as tmp:

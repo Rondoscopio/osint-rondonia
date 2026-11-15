@@ -57,6 +57,10 @@ web-dev: web-image
     mkdir -p .local/web-dev-kit .local/web-vite-temp .local/web-vite-cache
     SITE_BASE_PATH= {{compose}} run --rm --service-ports web-dev
 
+web-lint:
+    {{compose}} build web-check
+    {{compose}} run --rm web-check pnpm lint
+
 web-check:
     {{compose}} build web-check
     {{compose}} run --rm web-check sh -euc 'pnpm check && pnpm test && pnpm build && pnpm test:browser'

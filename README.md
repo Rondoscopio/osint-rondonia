@@ -11,10 +11,12 @@ Catálogo público de fontes de dados, ferramentas e referências para pesquisa,
 
 ## Catálogo de dados
 
-O catálogo atende pesquisadores, jornalistas, desenvolvedores e pessoas que acompanham a gestão pública. A distribuição atual inclui fontes, ferramentas, APIs, categorias, listas e cobertura territorial. A interface web consulta o SQLite no navegador; os endereços podem mudar e parte das fichas ainda aguarda triagem.
+O catálogo atende pesquisadores, jornalistas, desenvolvedores e pessoas que acompanham a gestão pública. Ele distingue **fontes de dados** — bases, feeds, APIs e outros provedores — de **ferramentas**, utilitários para pesquisar, visualizar ou manipular dados. O filtro de natureza separa as duas áreas e cada ficha preserva suas categorias e seu tipo registrado. Use [Fontes](https://rondoscopio.github.io/osint-rondonia/fontes/) ou [Ferramentas](https://rondoscopio.github.io/osint-rondonia/ferramentas/) para explorar. Os portais organizam recursivamente sites publicadores e instituições responsáveis. Links temáticos abrem a mesma tela com recortes de categoria. O site consulta o SQLite no navegador; os endereços podem mudar e parte das fichas ainda aguarda triagem.
 
 - **SQLite:** baixe [catalog.sqlite](data/exports/catalog.sqlite), abra em um cliente SQLite e comece pelas tabelas `fonte` e `categoria`.
 - **CSV:** use os [arquivos em data/](data/) e o [Data Package v2](datapackage.json), que descreve campos e chaves.
+- **Portais:** `portal` guarda nós de site, instituição e grupo; `portal_pai_id` forma a hierarquia e `fonte_portal` liga várias fichas ao mesmo nó.
+- **Páginas temáticas:** não há tabela de listas. As páginas do front-end definem combinações de categorias por união, interseção e exclusão, sem duplicar as fichas.
 - **Interface:** com Docker Compose e Just instalados, use `just web-dev` e abra <http://localhost:5173> para explorar localmente. O site pode ser publicado em GitHub Pages após a ativação dessa opção no repositório.
 - **Desenvolvimento:** use `just check` para validar dados e interface em Docker. Use `just web-build` para gerar os arquivos estáticos em `.local/site`. O [guia](docs/catalogo-relacional.md) tem consultas, critérios de revisão e comandos.
 
@@ -94,6 +96,24 @@ just validate
 just test
 just sqlite
 ```
+
+### Explorar o catálogo
+
+O mapa, os contadores e a tabela ficam na mesma tela. Selecione um estado ou
+município no mapa ou nos controles abaixo dele. A tabela e os contadores
+acompanham a seleção e incluem as fichas com cobertura nacional.
+
+Use a busca para filtrar por nome ou descrição, selecione a natureza da ficha
+e combine os filtros nos cabeçalhos das colunas. O nome de cada resultado abre
+a ficha completa. O botão **Limpar seleção** volta à cobertura geral.
+
+### Arquitetura da interface web
+
+As rotas em `web/src/routes/` oferecem entradas para o explorador, as fichas e as informações do projeto. Views em `web/src/lib/views/` ligam os ViewModels aos componentes de cada tela. Todo HTML, SVG, `<svelte:head>` e CSS local fica em `web/src/lib/components/`, separado entre `ui/`, `features/` e `shell/`. Crie ViewModels, casos de uso, portas, adapters e domínio em `web/src/lib/features/`; use `app/` para composição e DI e `shared/` para tipos e funções sem dependência da interface.
+
+Imports seguem a direção das camadas: rotas chamam views; views usam ViewModels e componentes; componentes não importam ViewModels, casos de uso nem adapters; domínio e portas dependem de módulos puros; casos de uso dependem de domínio e portas; adapters implementam portas; `app/` conecta as implementações. O ESLint resolve aliases `$lib`, caminhos relativos, imports de tipo, reexports, `import()` e URLs de Workers para bloquear violações. Tags nativas e HTML bruto fora de `components/` também falham com arquivo e linha.
+
+O gate executa o lint junto com as verificações Svelte em Docker. Rode `just web-lint` para verificar as camadas ou `just web-check` para executar a validação completa da interface.
 
 ## Licença
 

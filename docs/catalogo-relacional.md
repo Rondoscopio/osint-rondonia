@@ -2,13 +2,13 @@
 
 ## Interface de exploração
 
-O site em `web/` é gerado pelo SvelteKit em arquivos estáticos. SvelteKit prerenderiza as rotas de navegação, e a interface executa as buscas no navegador com uma cópia do SQLite. O Web Worker abre o banco uma vez, ativa `query_only` e executa operações com valores parametrizados. A URL do banco contém seu SHA-256, então uma atualização do SQLite gera um caminho de asset novo.
+O site em `web/` é gerado pelo SvelteKit em arquivos estáticos. SvelteKit prerenderiza as rotas de navegação, e a interface executa as buscas no navegador com uma cópia do SQLite. O Web Worker abre o banco uma vez, ativa `query_only` e executa operações com valores parametrizados. A URL do banco contém seu SHA-256, então uma atualização do SQLite gera um caminho de asset novo. O seletor de imagens de satélite também consulta o SQLite: `camada_mapa` guarda produtos renderizáveis e liga cada camada à ficha `fonte` que a publica.
 
-A busca permite texto no nome ou descrição, categoria, tipo, estado de triagem, UF, município e lista. A lista exige todas as categorias que lhe foram atribuídas. A triagem sem registro é um filtro próprio. A ordenação usa nome com desempate pelo ID, em páginas de 25 fichas; a URL preserva os filtros e a página. Numa lista vazia de categorias não há fontes correspondentes.
+A tela reúne mapa, contadores e uma tabela de fontes e ferramentas. A busca por nome ou descrição, os filtros nos cabeçalhos e a seleção territorial atualizam a tabela e os contadores na mesma consulta. Os links temáticos abrem essa tela com combinações de categorias por união (`anyOf`), interseção (`allOf`) e exclusão (`noneOf`). A ordenação inicial usa nome com desempate pelo ID, em páginas de 25 fichas.
 
-O filtro de UF procura UFs vinculadas à cobertura e municípios localizados nela, contando cada ficha uma vez. A cobertura nacional entra só quando o usuário marca essa opção. A localidade declarada aparece na ficha da fonte, sem se somar à cobertura. As contagens de categorias e UFs podem sobrepor fichas e as tabelas acessíveis mostram os mesmos grupos dos gráficos.
+O filtro de UF procura UFs vinculadas à cobertura e municípios localizados nela, contando cada ficha uma vez. Fichas cuja abrangência tem a flag `nacional` entram automaticamente em cada recorte específico de UF ou município; não há uma opção separada para incluí-las. A regra usa a abrangência declarada, sem inferir alcance nacional pelo campo `esfera`. A localidade declarada aparece na ficha da fonte, sem se somar à cobertura. As contagens de categorias e UFs podem sobrepor fichas e as tabelas acessíveis mostram os mesmos grupos dos gráficos.
 
-O grafo mostra vínculos diretos de fonte com categoria e proveniência. Cada página mostra até 40 vizinhos, com paginação para os restantes. Os links textuais reproduzem as mesmas relações e permitem percorrê-las por teclado. A interface apresenta triagem, validação e situação declarada das URLs em campos separados. Só endereços HTTP e HTTPS viram links externos.
+As fichas mostram categorias, proveniência e responsáveis com links para os registros associados. A interface apresenta triagem, validação e situação declarada das URLs em campos separados. Só endereços HTTP e HTTPS viram links externos.
 
 ## Desenvolvimento da interface
 
@@ -32,17 +32,15 @@ just web-build
 
 ## Arquitetura
 
-O Data Package v2 publica os CSV sob `data/`. A tabela `fonte` reúne 4.970 fichas, incluindo 391 fontes identificadas nos inventários históricos. Essas novas fichas têm triagem pendente. As sete referências do antigo TODO e a ficha do Atlas da Imprensa também têm triagem pendente.
+O Data Package v2 publica os CSV sob `data/`. A tabela `fonte` reúne 5.025 fichas, incluindo 391 fontes identificadas nos inventários históricos. Essas novas fichas têm triagem pendente. As sete referências do antigo TODO e a ficha do Atlas da Imprensa também têm triagem pendente. A hierarquia atual contém 3.720 portais: 3 grupos, 736 instituições e 2.981 sites. Há 1.371 relações de subportal e 2.349 nós-raiz; muitos portais permanecem na raiz quando não há relação superior confirmada. As 6.065 ligações incluem 5.009 publicadores, 1.024 órgãos responsáveis e 32 entidades responsáveis. Vinte e oito fichas não têm portal porque não possuem domínio interpretável nem responsabilidade declarada; não foi inferido um vínculo para elas.
 
 Os caminhos e hashes dos 4.571 JSON individuais continuam disponíveis no [CSV histórico do commit `12f926c`](https://github.com/Rondoscopio/osint-rondonia/blob/12f926c3052bf84804c30fc8851761eb6f7f8373/data/registro_original.csv). Para as novas fichas extraídas dos inventários, o caminho do documento está em `origem.valor_original`, ligado à ficha por `fonte_origem` com `tipo_origem=origem_cadastro`.
 
-Os [CSV históricos](https://github.com/Rondoscopio/osint-rondonia/tree/89b07610b3e5f4906f5278edfb15f8a0d29dd601/data) continuam recuperáveis no commit `89b0761`. Dos 7.749 itens, 5.551 já apontavam para fichas, 391 originaram fichas e 13 foram associados a fichas por referência ou por nome e endereço. As 22 tarefas foram para o README e 1.772 itens ficaram apenas no histórico. A revisão histórica conserva também a composição original das listas, a ordem, os metadados e os campos que ficaram sem representação no catálogo ativo.
+Os [CSV históricos](https://github.com/Rondoscopio/osint-rondonia/tree/89b07610b3e5f4906f5278edfb15f8a0d29dd601/data) continuam recuperáveis no commit `89b0761`. Dos 7.749 itens, 5.551 já apontavam para fichas, 391 originaram fichas e 13 foram associados a fichas por referência ou por nome e endereço. As 22 tarefas foram para o README e 1.772 itens ficaram apenas no histórico. A revisão histórica conserva também a composição original dos inventários, a ordem, os metadados e os campos que ficaram sem representação no catálogo ativo.
 
 ## Filtrar fontes por categoria no SQLite
 
-As 19 listas históricas ficam em `lista` e apontam para seus temas em `lista_categoria`. O ID e o nome de cada lista foram preservados. O mesmo ID agora identifica uma lista, então uma consulta a `fonte_categoria` com esse ID deixa de retornar a composição histórica. A composição exata continua nos [CSV do commit `90301f6`](https://github.com/Rondoscopio/osint-rondonia/tree/90301f6674552fec666fd76da173a12d5e9498ce/data). Uma futura consulta por lista exigirá todos os seus temas.
-
-Em `categoria`, cada rótulo representa um tema. Por exemplo, fichas classificadas como “Contratos e Licitações” passam a ter os dois temas separados. Expressões de sentido próprio, como “Dados Abertos” e “Processo Eletrônico (PJe 1º e 2º Grau)”, ficam juntas. Os temas das listas foram atribuídos às fichas quando havia evidência no nome, na descrição, no tipo ou nas classificações já declaradas.
+Em `categoria`, cada rótulo representa um tema. Por exemplo, fichas classificadas como “Contratos e Licitações” passam a ter os dois temas separados. Expressões de sentido próprio, como “Dados Abertos” e “Processo Eletrônico (PJe 1º e 2º Grau)”, ficam juntas. As combinações temáticas ficam no front-end e consultam `fonte_categoria` por IDs: podem unir temas, exigir todos, excluir temas ou combinar essas operações. As definições atuais estão em `web/src/lib/shared/recuts.ts`; não criam uma entidade ou conjunto de fichas duplicado.
 
 Na tabela `categoria`, localize o `id` pelo campo `nome` e confira o `tipo_classificacao`. Vincule esse ID ao parâmetro `:categoria_id` no cliente SQLite.
 
@@ -54,11 +52,19 @@ WHERE fc.categoria_id = :categoria_id
 ORDER BY f.nome, f.id;
 ```
 
-A consulta retorna uma linha por ficha associada à categoria escolhida. Fichas sem categoria continuam disponíveis em `fonte`.
+A consulta retorna uma linha por ficha associada à categoria escolhida. Fichas sem categoria continuam disponíveis em `fonte`. Para interseções, acrescente uma condição `EXISTS` por cada ID exigido; para exclusão, use `NOT EXISTS` com os IDs que devem ficar de fora. A interface implementa essas combinações sem uma tabela `lista`.
+
+## Portais e hierarquia institucional
+
+`portal` é uma hierarquia recursiva de nós reutilizáveis, não uma cópia das fichas. `tipo` distingue grupos de organização, instituições responsáveis e sites publicadores. `portal_pai_id` aponta para outro registro da própria tabela, permitindo níveis como grupo → instituição → site ou portal. `fonte_portal` liga várias fichas a qualquer nó e registra o papel da relação (`publicador`, `orgao_responsavel` ou `entidade_responsavel`). Uma fonte também pode apontar para mais de um portal.
+
+Os nós de instituição preservam o texto declarado nos campos de responsabilidade. Os nós de site são agrupados por origem web, sem modificar nenhuma URL de `fonte_url`. Quando uma esfera única está declarada nas fontes de uma instituição, ela é agrupada sob o nó federal, estadual ou municipal correspondente. Um site é colocado sob uma instituição somente quando as fichas ligadas ao domínio apontam para uma única instituição responsável; nos demais casos, permanece sem esse vínculo inferido. A hierarquia pode ser corrigida diretamente em `portal_pai_id`, mantendo IDs persistentes e sem mesclar nomes semelhantes automaticamente.
+
+Na ficha, o link de um portal abre a tabela filtrada pelas relações diretas daquele nó. As fichas vinculadas aos descendentes podem ser consultadas na hierarquia do SQLite.
 
 ## Filtrar fontes por UF no SQLite
 
-Use o código IBGE da UF em `:codigo_uf`. A consulta inclui a própria UF e seus municípios. Use `:incluir_nacional = 1` para incluir também as fichas com abrangência nacional. A localização declarada da ficha pode ser consultada separadamente pelo papel `localidade_declarada`.
+Use o código IBGE da UF em `:codigo_uf`. A consulta inclui a própria UF, seus municípios e automaticamente as fichas com abrangência nacional. A localização declarada da ficha pode ser consultada separadamente pelo papel `localidade_declarada`.
 
 ```sql
 SELECT f.id, f.nome
@@ -76,7 +82,7 @@ WHERE fa.papel = 'cobertura'
       JOIN municipio AS m ON m.codigo_ibge = am.municipio_codigo_ibge
       WHERE am.abrangencia_id = a.id AND m.uf_codigo_ibge = :codigo_uf
     )
-    OR (:incluir_nacional = 1 AND a.nacional = 1)
+    OR a.nacional = 1
   )
 ORDER BY f.nome, f.id;
 ```
@@ -92,10 +98,12 @@ Os 3.670 vínculos anteriores e seus valores literais podem ser recuperados no [
 ```mermaid
 erDiagram
     FONTE ||--o{ FONTE_URL : possui
+    FONTE ||--o{ CAMADA_MAPA : publica
     FONTE ||--o{ FONTE_CATEGORIA : classificada
     CATEGORIA ||--o{ FONTE_CATEGORIA : associa
-    LISTA ||--o{ LISTA_CATEGORIA : possui
-    CATEGORIA ||--o{ LISTA_CATEGORIA : associa
+    PORTAL o|--o{ PORTAL : hierarquia
+    FONTE ||--o{ FONTE_PORTAL : relaciona
+    PORTAL ||--o{ FONTE_PORTAL : associa
     TIPO ||--o{ FONTE : classifica
     STATUS_VALIDACAO ||--o{ FONTE : descreve
     FONTE ||--o{ FONTE_ABRANGENCIA : possui
@@ -114,13 +122,14 @@ erDiagram
 
 | Recurso | Responsabilidade | Chave primária |
 | --- | --- | --- |
-| `fonte` | Ficha, atributos escalares comuns, ID externo e status legado | `id` |
+| `fonte` | Ficha de fonte de dados ou ferramenta; `natureza` é `fonte` ou `ferramenta` e não depende do tipo registrado | `id` |
 | `tipo`, `status_validacao` | Vocabulários exatos encontrados nas fichas | `id` |
 | `categoria` | Rótulos de todas as classificações; `tipo_classificacao` distingue `principal`, `original` e `curadoria` | `id` |
 | `fonte_categoria` | Relação N:N única entre fontes e categorias, preservando o tipo da categoria associada | chave composta (`fonte_id`, `categoria_id`) |
-| `lista` | ID e nome das listas históricas de fontes | `id` |
-| `lista_categoria` | Relação N:N entre listas e temas do catálogo | (`lista_id`, `categoria_id`) |
+| `portal` | Nó recursivo de grupo, instituição ou site; `portal_pai_id` referencia outro portal | `id` |
+| `fonte_portal` | Relação entre ficha, portal e papel de publicação ou responsabilidade | (`fonte_id`, `portal_id`, `papel`) |
 | `fonte_url` | URL principal e links relacionados; compartilhamento não implica identidade | `id` |
+| `camada_mapa` | Configuração de camadas raster de satélite, periodicidade, atribuição e tiles, vinculada à fonte provedora | `id` |
 | `uf` | Código IBGE, sigla e nome de cada UF | `codigo_ibge` |
 | `municipio` | Código IBGE, nome e FK para a UF de cada unidade municipal | `codigo_ibge` |
 | `abrangencia` | Conjunto compartilhável, com flags booleanas `nacional` e `internacional` | `id` |
@@ -130,11 +139,29 @@ erDiagram
 | `origem` | Valor literal único em `valor_original` e referência opcional a `fonte.id` em `fonte_referenciada_id` | `id` |
 | `fonte_origem` | Liga a ficha descrita (`fonte_id`) à origem (`origem_id`) e preserva o campo da ficha (`tipo_origem`) | (`fonte_id`, `tipo_origem`) |
 
-Cada relação declara as chaves estrangeiras no descritor. `fonte.status_triagem` é nulo quando não há estado editorial registrado. `status_validacao` preserva o texto legado, sem traduzi-lo para um estado de aprovação. Disponibilidade de URL não é inferida a partir desses textos.
+Colunas das novas tabelas:
+
+| Tabela.coluna | Uso |
+| --- | --- |
+| `portal.id` | Identificador persistente do nó. |
+| `portal.nome` | Nome literal da instituição ou nome do host do site. |
+| `portal.tipo` | `grupo`, `instituicao` ou `site`. |
+| `portal.url_base` | Origem web do site; nula para grupos e instituições. |
+| `portal.portal_pai_id` | FK opcional para outro nó na mesma árvore. Nulo indica raiz ou relação superior não confirmada. |
+| `fonte_portal.fonte_id` | FK da ficha relacionada. |
+| `fonte_portal.portal_id` | FK do grupo, instituição ou site relacionado. |
+| `fonte_portal.papel` | `publicador`, `orgao_responsavel` ou `entidade_responsavel`. |
+| `camada_mapa.fonte_id` | FK para a ficha `fonte` provedora da camada. |
+| `camada_mapa.url_tiles` | Modelo de tiles raster; `{data}` é substituído pela data disponível para produtos diários. |
+| `camada_mapa.periodicidade` e `data_referencia` | Indicam produto `fixa` com data ou ano de referência, ou produto `diaria` com data resolvida pela aplicação. |
+| `camada_mapa.atribuicao`, `url_atribuicao` e `acknowledgement` | Créditos e avisos do provedor apresentados na interface. |
+| `camada_mapa.zoom_maximo`, `tile_size`, `cobertura_continua` e `ordem` | Parâmetros de renderização e ordenação no seletor. |
+
+Cada relação declara as chaves estrangeiras no descritor. `fonte.status_triagem` é nulo quando não há estado editorial registrado. `status_validacao` preserva o texto legado, sem traduzi-lo para um estado de aprovação. Disponibilidade de URL não é inferida a partir desses textos. Os campos legados de órgão e entidade responsável foram transferidos sem reescrita para `portal.nome` e ligados às fichas em `fonte_portal`.
 
 ### Campos e preservação
 
-Os campos escalares observados nas fichas estão em `fonte`; os atributos que representam várias URLs, classificações, abrangências, localidades e proveniência usam tabelas relacionadas. A dimensão `categoria` reúne os rótulos dos campos principal, original e de curadoria, sem fundir termos; `tipo_classificacao` preserva de qual campo cada rótulo veio. `fonte_categoria` é a única relação entre fichas e categorias.
+Os campos escalares observados nas fichas estão em `fonte`; os atributos que representam várias URLs, classificações, abrangências, localidades, portais e proveniência usam tabelas relacionadas. `fonte.natureza` separa provedores de dados (`fonte`) de utilitários (`ferramenta`), independentemente de `tipo_id`, que preserva o tipo registrado na importação. Uma fonte fornece uma base, feed, API, corpus ou outro conjunto de dados; uma ferramenta serve principalmente para pesquisar, visualizar, coletar, comparar ou manipular dados. Os tipos registrados `ferramenta_ou_servico`, `consulta_predefinida`, `consulta_publica`, `painel_de_monitoramento`, `painel_publico`, `painel_transparencia`, `plataforma_de_consulta_eleitoral` e `servico_comercial_de_consulta_cadastral` são classificados como ferramentas, salvo fichas que explicitamente fornecem dados — por exemplo, APIs, bases ou espelhos de dados identificados na própria ficha. Os rótulos e IDs de tipo originais não são alterados. Nesta edição há 3.787 fontes e 1.239 ferramentas. A classificação pode ser refinada por revisão editorial sem mudar os IDs das fichas. A dimensão `categoria` reúne os rótulos dos campos principal, original e de curadoria, sem fundir termos; `tipo_classificacao` preserva de qual campo cada rótulo veio. `fonte_categoria` é a única relação entre fichas e categorias.
 
 O token `\N` representa valor nulo e está declarado como `missingValues`; ele é reservado e uma colisão literal interrompe a importação explicitamente. Strings vazias continuam vazias. A distinção original entre campo ausente e nulo foi verificada antes do corte e permanece documentada nos dados tipados e no índice histórico; o documento byte a byte deixa de ser recuperável depois da remoção. A exportação não normaliza pontuação, capitalização, idioma, URLs ou rótulos.
 
@@ -146,7 +173,7 @@ Os IDs atuais são valores persistentes gravados diretamente nas tabelas CSV. Ed
 
 IDs externos (por exemplo, `BRAPI-00001`) ficam em `fonte.id_externo`; nunca substituem a chave interna.
 
-Para cadastrar uma cobertura, reúna as flags e os códigos confirmados e procure um conjunto igual. O ID segue `abr-` mais o SHA-256 de um array JSON compacto `[nacional,internacional,ufs,municipios]`. Os dois últimos elementos são listas de códigos textuais ordenadas e sem repetições. A função `abrangencia_id` em `scripts/geografia.py` calcula esse valor. Ao alterar a cobertura de uma ficha, troque seu vínculo para o conjunto correspondente. As flags nacional e internacional são independentes, podem coexistir com territórios explícitos e dispensam expandir uma cobertura nacional em 27 vínculos. Uma cobertura internacional indica alcance estrangeiro declarado e só entra no filtro por UF se também houver vínculo territorial ou cobertura nacional incluída na consulta.
+Para cadastrar uma cobertura, reúna as flags e os códigos confirmados e procure um conjunto igual. O ID segue `abr-` mais o SHA-256 de um array JSON compacto `[nacional,internacional,ufs,municipios]`. Os dois últimos elementos são listas de códigos textuais ordenadas e sem repetições. A função `abrangencia_id` em `scripts/geografia.py` calcula esse valor. Ao alterar a cobertura de uma ficha, troque seu vínculo para o conjunto correspondente. As flags nacional e internacional são independentes, podem coexistir com territórios explícitos e dispensam expandir uma cobertura nacional em 27 vínculos. A flag nacional faz a ficha aparecer automaticamente em cada filtro por UF ou município; a flag internacional sozinha não implica cobertura no Brasil.
 
 ## Execução
 
@@ -171,7 +198,9 @@ just check
 
 `just sqlite` valida primeiro o descritor com Frictionless e as regras relacionais do projeto. O exportador lê as linhas tipadas pelos recursos Frictionless, cria as tabelas com chaves primárias e estrangeiras e grava em staging; só substitui o SQLite versionado depois de passar `integrity_check`, `foreign_key_check` e contagens por tabela. A execução é determinística e uma falha preserva a versão publicada anterior.
 
-O SQLite contém os 16 recursos do pacote. As chaves estrangeiras estão declaradas no arquivo; aplicações que alterarem os dados devem habilitar sua verificação por conexão com `PRAGMA foreign_keys = ON`.
+O SQLite contém os recursos declarados no Data Package. As chaves estrangeiras estão declaradas no arquivo; aplicações que alterarem os dados devem habilitar sua verificação por conexão com `PRAGMA foreign_keys = ON`. As tabelas `lista` e `lista_categoria` não fazem parte do pacote; recortes temáticos são combinações de categorias no front-end. As camadas de satélite cadastradas em `camada_mapa` são consultadas pelo Worker e exibidas no seletor com a ficha provedora correspondente. Uma ficha só aparece nesse seletor quando possui configuração raster explícita, tiles acessíveis sem credenciais privadas e atribuição registrada. Ter outras fichas de satélite no catálogo não significa que elas forneçam tiles de mapa: páginas de download, APIs de dados e serviços com autenticação continuam catalogados e não são convertidos automaticamente em fundos cartográficos.
+
+Na versão atual, `camada_mapa` disponibiliza sete opções: seis camadas NASA GIBS (Blue Marble, VIIRS NOAA-20, VIIRS Suomi-NPP, MODIS Terra e Aqua em cor natural e MODIS Terra em falso colorido) e um mosaico EOX/Sentinel-2 de 2016. O SQLite guarda o provedor, a camada, os modelos de tiles e os créditos; o seletor mostra o nome do provedor junto ao produto. O mosaico EOX 2016 usa CC BY 4.0 e a atribuição oficial é exibida no mapa; os mosaicos EOX de outros anos não foram incluídos porque possuem termos diferentes.
 
 ## Contribuições
 
@@ -189,7 +218,7 @@ Use o formulário de correção para indicar a ficha, o problema e a evidência 
 
 A AGPL se aplica ao código do projeto. Dados, imagens e outros materiais de terceiros conservam suas condições de uso. A base territorial é do IBGE, edição DTB 2025, conforme a referência na seção de geografia. Registre a atribuição e a licença somente quando confirmadas. Material com direito de redistribuição incerto fica em revisão e pode ser referenciado por um endereço público adequado.
 
-Para incluir ou alterar uma ficha, edite os CSV e suas relações, mantendo os IDs e respeitando as FKs. Uma ficha precisa ter uma linha em `fonte`. Adicione suas categorias, URLs, abrangência, localidade e proveniência nas respectivas tabelas. Para remover uma ficha, remova primeiro as relações que a referenciam. Rode `just check` antes do pull request.
+Para incluir ou alterar uma ficha, edite os CSV e suas relações, mantendo os IDs e respeitando as FKs. Uma ficha precisa ter uma linha em `fonte`. Adicione suas categorias, URLs, abrangência, portais e proveniência nas respectivas tabelas. Para adicionar uma combinação temática, edite a definição de recorte no front-end usando os IDs de categoria. Para remover uma ficha, remova primeiro as relações que a referenciam. Rode `just check` antes do pull request.
 
 O workflow `.github/workflows/ci.yaml` constrói a imagem e executa validação Data Package v2, integridade CSV/FK, testes e comparação do SQLite em Docker. Contexto, objetivo e atividades do antigo backlog estão no README. As sete referências estão em `fonte.csv` e seus links em `fonte_url.csv`; mantenha a triagem como pendente até revisão editorial. A licença AGPL-3.0-or-later cobre o código do repositório; licenças de dados externos não são herdadas automaticamente e não foram declaradas como uma licença única do pacote.
 

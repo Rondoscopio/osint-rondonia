@@ -14,6 +14,7 @@ const runUrl = process.env.CATALOG_BUILD_RUN_URL ?? '';
 const repositoryUrl = 'https://github.com/Rondoscopio/osint-rondonia';
 
 export default defineConfig({
+  worker: { format: 'es' },
   define: {
     __CATALOG_FILE__: JSON.stringify(filename),
     __BUILD_INFO__: JSON.stringify({
